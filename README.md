@@ -33,9 +33,9 @@ The application should have the following functionality:
     - If an order is deleted, we need to ensure that the product is returned to the warehouse.
 
 ### Contribution Summary
-| Name                  | Contribution  |
-|-----------------------|---------------|
-| Ismael Fernandez      | temp          |
-| Sebastian Krawiec     | temp          |
-| Dilip Sai Reddy Mettu | temp          |
-| Jay Kukadiya          | temp          |
+| Name                  | Contribution                                                                                          |
+|-----------------------|-------------------------------------------------------------------------------------------------------|
+| Ismael Fernandez      | Create Application base, implemented simple 3 layer architecture. Helped with High-Level Requirements |
+| Sebastian Krawiec     | Created High-Level Requirements.                                                                      |
+| Dilip Sai Reddy Mettu | Confirmed availability.                                                                               |
+| Jay Kukadiya          | Nothing, has not responded to communications.                                                         |
