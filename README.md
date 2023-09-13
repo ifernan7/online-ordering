@@ -2,8 +2,7 @@
 > This is an Online Retail Store themed Educational Spring Boot application made for DePaul University's SE-452 Object-Oriented Enterprise Computing Course. The following students worked on the application:
 > - Ismael Fernandez
 > - Sebastian Krawiec
-> - Dilip sai Reddy Mettu
-> - Jon Doretti
+> - Dilip Sai Reddy Mettu
 > - Jay Kukadiya
 
 ## Milestone 1
@@ -25,10 +24,18 @@ The application should have the following functionality:
   - Page to Delete a Product:
     - A confirmation is needed to confirm the deletion of a product.
 
-- Order Products:**
+- Order Products:
   - Page to Create an Order:
     - A limit should be set on the number of product quantities that can be ordered.
     - Products must be in stock in the warehouse before they can be ordered.
   - Page to Update an Order:
   - Page to Delete an Order:
     - If an order is deleted, we need to ensure that the product is returned to the warehouse.
+
+### Contribution Summary
+| Name                  | Contribution  |
+|-----------------------|---------------|
+| Ismael Fernandez      | temp          |
+| Sebastian Krawiec     | temp          |
+| Dilip Sai Reddy Mettu | temp          |
+| Jay Kukadiya          | temp          |
