@@ -35,7 +35,7 @@ The application should have the following functionality:
 ### Contribution Summary
 | Name                  | Contribution                                                                                          |
 |-----------------------|-------------------------------------------------------------------------------------------------------|
-| Ismael Fernandez      | Create Application base, implemented simple 3 layer architecture. Helped with High-Level Requirements |
+| Ismael Fernandez      | Create Application base, implemented simple 3 layer architecture. Helped with High-Level Requirements.|
 | Sebastian Krawiec     | Created High-Level Requirements.                                                                      |
-| Dilip Sai Reddy Mettu | Confirmed availability.                                                                               |
+| Dilip Sai Reddy Mettu | Helped with High-Level Requirements.                                                                  |
 | Jay Kukadiya          | Nothing, has not responded to communications.                                                         |
