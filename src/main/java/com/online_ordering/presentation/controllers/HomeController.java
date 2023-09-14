@@ -19,7 +19,8 @@ public class HomeController {
         this._userService = userService;
     }
 
-    @GetMapping("/Home")
+    //@GetMapping("/Home")
+    @GetMapping("/")
     public ModelAndView Home(Model model) {
         System.out.println("i'm inside the Home Method of the home controller!!");
         String test = _userService.GetUserByEmail();
