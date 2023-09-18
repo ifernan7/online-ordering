@@ -51,7 +51,7 @@ public class HomeController {
 
          ModelAndView modelAndView = new ModelAndView();
          modelAndView.addObject("user",ismael);
-         modelAndView.setViewName("user");
+         modelAndView.setViewName("user/index");
 
          return modelAndView;
      }
