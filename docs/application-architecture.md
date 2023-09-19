@@ -7,5 +7,5 @@ In this context the term "Layer" means unique part of the application. You can t
    - This layer is responsible for all data access code. All SQL queries, Stored Procedure calls and any calls to an external persistence mechanism need to happen here in this layer.
  - Service:
    - This layer is for implementing business rules and data processing. This communicates to the Repository layer to get data to process.
- - Presentation
+ - Presentation:
 

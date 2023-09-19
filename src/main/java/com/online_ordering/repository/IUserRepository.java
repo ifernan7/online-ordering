@@ -12,4 +12,5 @@ public interface IUserRepository extends JpaRepository<User, Long> {
     @Query(value = "SELECT name FROM online_ordering_db.Users", nativeQuery = true)
     List<User> GetAllUsers();
 
+    //GetUserOrders1
 }
