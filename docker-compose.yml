@@ -1,13 +1,13 @@
 version: '3'
 
 services:
-  mysql:
-    image: mysql:latest
-    container_name: my-mysql-container
+  database:
+    image: mysql:8
+    container_name: database
     environment:
-      MYSQL_ROOT_PASSWORD: test
-      MYSQL_DATABASE: test
-      MYSQL_USER: test
-      MYSQL_PASSWORD: test
+      MYSQL_DATABASE: online_ordering_db
+      MYSQL_ROOT_PASSWORD: online_ordering_root_password
+      MYSQL_USER: online_ordering_user
+      MYSQL_PASSWORD: online_ordering_password
     ports:
       - "3306:3306"
