@@ -1,6 +1,6 @@
 package com.online_ordering.presentation.controllers;
 
-import com.online_ordering.domain.Product;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
@@ -8,11 +8,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.online_ordering.domain.User;
 import com.online_ordering.infrastructure.abstractions.IUserService;
-import com.online_ordering.repository.UserRepository;
 
 @Controller
 public class HomeController {
 
+    //@Autowired
     private final IUserService _userService;
 
     public HomeController(IUserService userService) {
@@ -42,9 +42,9 @@ public class HomeController {
      public ModelAndView User(Model model) {
          System.out.println("In Home Controller");
 
-         UserRepository repository = new UserRepository();
+         //UserRepository repository = new UserRepository();
 
-         String user = repository.GetUserByEmail();
+        // String user = repository.GetUserByEmail();
 
          User ismael = new User();
          ismael.setName("Gabe");
