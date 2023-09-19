@@ -1,6 +1,5 @@
 package com.online_ordering.presentation.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
@@ -9,10 +8,11 @@ import org.springframework.web.servlet.ModelAndView;
 import com.online_ordering.domain.User;
 import com.online_ordering.infrastructure.abstractions.IUserService;
 
+import java.util.List;
+
 @Controller
 public class HomeController {
 
-    //@Autowired
     private final IUserService _userService;
 
     public HomeController(IUserService userService) {
@@ -22,17 +22,15 @@ public class HomeController {
     //@GetMapping("/Home")
     @GetMapping("/")
     public ModelAndView Home(Model model) {
-        System.out.println("i'm inside the Home Method of the home controller!!");
-        String test = _userService.GetUserByEmail();
-        System.out.println(test);
 
-        System.out.println("In Home Controller");
+        System.out.println("Inside the Home Method inside the HomeController . . .");
 
-        User ismael = new User();
-        ismael.setName(test);
+        List<User> users = _userService.GetAllUsers();
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("user", ismael);
+
+        modelAndView.addObject("users", users);
+
         modelAndView.setViewName("home");
 
         return modelAndView;

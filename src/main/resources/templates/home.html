@@ -9,7 +9,11 @@
 
 <body>
     <section layout:fragment="content">
-        <span th:text="${user.name}">-</span>
+
+        <tr th:each="object : ${users}">
+            <td th:text="${object.name}"></td>
+        </tr>
+
     </section>
 </body>
 </html>

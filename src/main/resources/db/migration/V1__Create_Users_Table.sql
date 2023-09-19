@@ -3,3 +3,4 @@ CREATE TABLE Users (
 );
 
 INSERT INTO Users (name) VALUES ('Danielle');
+INSERT INTO Users (name) VALUES ('Scott');
