@@ -9,7 +9,10 @@
 
 <body>
 <section layout:fragment="content">
-  <span th:text="${user.name}">-</span>
+  <p>The following are some samples users:</p>
+  <ul th:each="object : ${users}">
+    <li><span th:text="${object.email}"></span></li>
+  </ul>
 </section>
 </body>
 </html>

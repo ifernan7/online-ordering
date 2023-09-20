@@ -23,7 +23,7 @@ public class HomeController {
     @GetMapping("/")
     public ModelAndView Home(Model model) {
 
-        System.out.println("Inside the Home Method inside the HomeController . . .");
+    System.out.println("Inside the Home Method inside the HomeController . . .");
 
         List<User> users = _userService.GetAllUsers();
 
@@ -31,7 +31,8 @@ public class HomeController {
 
         modelAndView.addObject("users", users);
 
-        modelAndView.setViewName("home");
+        //modelAndView.setViewName("home");
+        modelAndView.setViewName("home/index");
 
         return modelAndView;
     }
