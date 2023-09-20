@@ -45,7 +45,7 @@ public class HomeController {
         // String user = repository.GetUserByEmail();
 
          User ismael = new User();
-         ismael.setName("Gabe");
+         //ismael.setName("Gabe");
 
          ModelAndView modelAndView = new ModelAndView();
          modelAndView.addObject("user",ismael);
