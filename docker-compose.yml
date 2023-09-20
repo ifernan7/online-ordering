@@ -3,7 +3,6 @@ version: '3'
 services:
   database:
     image: mysql:8
-    container_name: database
     environment:
       MYSQL_DATABASE: online_ordering_db
       MYSQL_ROOT_PASSWORD: online_ordering_root_password
@@ -11,3 +10,11 @@ services:
       MYSQL_PASSWORD: online_ordering_password
     ports:
       - "3306:3306"
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
