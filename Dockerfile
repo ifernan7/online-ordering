@@ -6,8 +6,6 @@ COPY target/online_ordering-0.0.1-SNAPSHOT.jar /app/online_ordering-0.0.1-SNAPSH
 
 EXPOSE 8080
 
-#CMD ["java", "-jar", "online_ordering-0.0.1-SNAPSHOT.jar"]
-
 #java -jar online_ordering-0.0.1-SNAPSHOT.jar
 
 #mysql -u root -p -h database -D online_ordering_db
@@ -17,5 +15,4 @@ EXPOSE 8080
 #    rm -rf /var/lib/apt/lists/*
 
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
-
 CMD ["java", "-jar", "online_ordering-0.0.1-SNAPSHOT.jar"]

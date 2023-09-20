@@ -7,6 +7,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
+    depends_on:
+      database:
+        condition: service_started
+    restart: on-failure
   database:
     image: mysql:8
     environment:
