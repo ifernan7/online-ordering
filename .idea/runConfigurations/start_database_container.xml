@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="start-database-container" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+  <configuration default="false" name="start-database-container" type="docker-deploy" factoryName="docker-compose.yml" editBeforeRun="true" server-name="Docker">
     <deployment type="docker-compose.yml">
       <settings>
         <option name="envFilePath" value="" />
@@ -7,6 +7,9 @@
         <option name="sourceFilePath" value="docker-compose.yml" />
       </settings>
     </deployment>
-    <method v="2" />
+    <method v="2">
+      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean" />
+      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="package" />
+    </method>
   </configuration>
 </component>
