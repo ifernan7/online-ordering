@@ -39,3 +39,13 @@ The application should have the following functionality:
 | Sebastian Krawiec     | Created High-Level Requirements.                                                                      |
 | Dilip Sai Reddy Mettu | Helped with High-Level Requirements.                                                                  |
 | Jay Kukadiya          | Nothing, has not responded to communications.                                                         |
+
+## Milestone 2
+~ temp ~
+### Contribution Summary
+| Name                  | Contribution |
+|-----------------------|--------------|
+| Ismael Fernandez      |              |
+| Sebastian Krawiec     |              |
+| Dilip Sai Reddy Mettu |              |
+| Jay Kukadiya          |              |
