@@ -25,33 +25,28 @@ public class HomeController {
 
     System.out.println("Inside the Home Method inside the HomeController . . .");
 
-        List<User> users = _userService.GetAllUsers();
-
         ModelAndView modelAndView = new ModelAndView();
 
-        modelAndView.addObject("users", users);
-
-        //modelAndView.setViewName("home");
         modelAndView.setViewName("home/index");
 
         return modelAndView;
     }
 
-  @GetMapping("/User")
-     public ModelAndView User(Model model) {
-         System.out.println("In Home Controller");
-
-         //UserRepository repository = new UserRepository();
-
-        // String user = repository.GetUserByEmail();
-
-         User ismael = new User();
-         //ismael.setName("Gabe");
-
-         ModelAndView modelAndView = new ModelAndView();
-         modelAndView.addObject("user",ismael);
-         modelAndView.setViewName("user/index");
-
-         return modelAndView;
-     }
+//  @GetMapping("/User")
+//     public ModelAndView User(Model model) {
+//         System.out.println("In Home Controller");
+//
+//         //UserRepository repository = new UserRepository();
+//
+//        // String user = repository.GetUserByEmail();
+//
+//         User ismael = new User();
+//         //ismael.setName("Gabe");
+//
+//         ModelAndView modelAndView = new ModelAndView();
+//         modelAndView.addObject("user",ismael);
+//         modelAndView.setViewName("user/index");
+//
+//         return modelAndView;
+//     }
 }

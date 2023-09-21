@@ -18,4 +18,21 @@ public class UserService implements IUserService {
     public List<User> GetAllUsers() {
         return  _userRepository.GetAllUsers();
     }
+
+    public void AddUser(String email, String password) {
+        _userRepository.AddUser(email,password);
+    }
+
+    public void UpdateUserEmailById(int id, String email) {
+        _userRepository.UpdateUserEmailById(id, email);
+    }
+
+    public List<User> GetUserById(int id) {
+        return _userRepository.GetUserById(id);
+    }
+
+    public void DeleteUserById(int id) {
+        _userRepository.DeleteUserById(id);
+    }
+
 }

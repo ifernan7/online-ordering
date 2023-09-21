@@ -4,15 +4,28 @@
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{layout.html}">
 <head>
-  <title>user page</title>
+  <title>Home Page</title>
 </head>
 
 <body>
 <section layout:fragment="content">
-  <p>The following are some samples users:</p>
-  <ul th:each="object : ${users}">
-    <li><span th:text="${object.email}"></span></li>
-  </ul>
+  <h1>Users</h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="object : ${users}">
+      <td th:text="${object.id}"></td>
+      <td th:text="${object.email}"></td>
+      <td><a th:href="@{'/user/delete/' + ${object.id}}">Delete</a></td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 </body>
 </html>

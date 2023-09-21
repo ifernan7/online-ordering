@@ -9,11 +9,11 @@
 
 <body>
 <section layout:fragment="content">
-    <p>this page is /home/index</p>
-    <p>The following are some sample users:</p>
-    <ul th:each="object : ${users}">
-        <li><span th:text="${object.email}"></span></li>
-    </ul>
+    <p>
+        home page!!!
+    </p>
+    <a th:href="@{/user}">Users</a>
+
 </section>
 </body>
 </html>
