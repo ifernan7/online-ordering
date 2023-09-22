@@ -1,4 +1,4 @@
-package com.online_ordering.presentation;
+package com.online_ordering;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -12,8 +12,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 //note: This shows me real exceptions!
 @EnableAutoConfiguration(exclude = {ErrorMvcAutoConfiguration.class} )
 @ComponentScan(basePackages = {"com.online_ordering.*"})
-@EnableJpaRepositories(basePackages = "com.online_ordering.repository")
-@EntityScan("com.online_ordering.domain")
+@EnableJpaRepositories(basePackages = "com.online_ordering.*")
+@EntityScan("com.online_ordering.*")
 public class Application {
 
 	public static void main(String[] args) {

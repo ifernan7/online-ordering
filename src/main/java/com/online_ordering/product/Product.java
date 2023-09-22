@@ -1,4 +1,4 @@
-package com.online_ordering.domain;
+package com.online_ordering.product;
 
 import lombok.Data;
 

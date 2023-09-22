@@ -1,7 +1,7 @@
-package com.online_ordering.presentation.controllers;
+package com.online_ordering.user;
 
-import com.online_ordering.domain.User;
-import com.online_ordering.infrastructure.abstractions.IUserService;
+import com.online_ordering.user.User;
+import com.online_ordering.user.abstractions.IUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

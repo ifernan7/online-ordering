@@ -1,4 +1,4 @@
-package com.online_ordering.domain;
+package com.online_ordering.user;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -9,6 +9,6 @@ import lombok.Data;
 public class User {
      @Id
      private int id;
-     
+
      private String email;
 }

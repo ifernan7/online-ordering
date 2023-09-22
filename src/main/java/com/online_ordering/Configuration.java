@@ -1,4 +1,4 @@
-package com.online_ordering.presentation;
+package com.online_ordering;
 
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 import org.springframework.context.annotation.Bean;

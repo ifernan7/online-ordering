@@ -1,6 +1,6 @@
-package com.online_ordering.repository;
+package com.online_ordering.user.abstractions;
 
-import com.online_ordering.domain.User;
+import com.online_ordering.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

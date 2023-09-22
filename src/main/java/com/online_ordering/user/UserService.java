@@ -1,8 +1,7 @@
-package com.online_ordering.infrastructure;
+package com.online_ordering.user;
 
-import com.online_ordering.domain.User;
-import com.online_ordering.infrastructure.abstractions.IUserService;
-import com.online_ordering.repository.IUserRepository;
+import com.online_ordering.user.abstractions.IUserRepository;
+import com.online_ordering.user.abstractions.IUserService;
 import org.springframework.stereotype.Service;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.online_ordering.repository;
+package com.online_ordering.product;
 
 public interface IProductRepository {
 }

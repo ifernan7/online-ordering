@@ -1,5 +1,6 @@
-package com.online_ordering.infrastructure.abstractions;
-import com.online_ordering.domain.User;
+package com.online_ordering.user.abstractions;
+
+import com.online_ordering.user.User;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
