@@ -64,3 +64,17 @@ INSERT INTO products (name, description, price) VALUES
     ('Soccer Ball', 'FIFA-approved soccer ball for matches.', 39.95),
     ('Running Shoes', 'Running shoes with cushioning and support.', 69.99),
     ('Backpack', 'Durable backpack with multiple compartments.', 49.99);
+
+INSERT INTO online_ordering_db.order_status (status)
+VALUES
+    ('Pending'),
+    ('Processing'),
+    ('Shipped'),
+    ('Delivered');
+INSERT INTO online_ordering_db.orders (user_id, order_date, status_id)
+VALUES
+    (1, '2023-09-20', 1),
+    (2, '2023-09-21', 2),
+    (1, '2023-09-21', 3),
+    (3, '2023-09-22', 1);
+
