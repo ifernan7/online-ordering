@@ -4,12 +4,14 @@
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{layout.html}">
 <head>
-  <title>Home Page</title>
+  <title>Users</title>
 </head>
 
 <body>
 <section layout:fragment="content">
   <h1>Users</h1>
+  <a th:href="@{/user/create}">Create a User</a>
+
   <table class="table">
     <thead>
     <tr>

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -37,4 +38,23 @@ public class UserController {
 
         return new RedirectView("/user");
     }
+
+    @GetMapping("/user/create")
+    public ModelAndView Create() {
+
+        ModelAndView modelAndView = new ModelAndView();
+
+        modelAndView.setViewName("user/create");
+
+        return modelAndView;
+    }
+
+    @PostMapping("/user/create")
+    public RedirectView Create(CreateNewUserDTO model) {
+
+        _userService.AddUser(model.getEmail(), model.getPassword());
+
+        return new RedirectView("/user");
+    }
+
 }

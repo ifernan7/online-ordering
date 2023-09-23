@@ -41,7 +41,13 @@ The application should have the following functionality:
 | Jay Kukadiya          | Nothing, has not responded to communications.                                                         |
 
 ## Milestone 2
-~ temp ~
+### Architecture Agreement
+The following team members agree to be graded on an INDIVIDUAL BASIS based on project structure refactoring.
+- [X] Ismael Fernandez 
+- [ ] Sebastian Krawiec 
+- [ ] Dilip Sai Reddy Mettu 
+- [ ] Jay Kukadiya
+
 ### Contribution Summary
 | Name                  | Contribution |
 |-----------------------|--------------|
