@@ -1,8 +1,8 @@
 # How to Run the Application
 
-need to have docker installed
-need to install intellij 
-need to have mysql workbench
+- need to have docker installed
+- need to install intellij 
+- need to have mysql workbench
 
 Need to make the docker container that is running our data is running before we start to rub the application
 

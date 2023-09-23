@@ -48,10 +48,14 @@ The following team members agree to be graded on an INDIVIDUAL BASIS based on pr
 - [X] Dilip Sai Reddy Mettu 
 - [ ] Jay Kukadiya
 
+### Database Diagram
+![My Image](docs/images/database-diagram.png)
+
+
 ### Contribution Summary
-| Name                  | Contribution |
-|-----------------------|--------------|
-| Ismael Fernandez      |              |
-| Sebastian Krawiec     |              |
-| Dilip Sai Reddy Mettu |              |
-| Jay Kukadiya          |              |
+| Name                  | Contribution                                                                                                                                                            |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Ismael Fernandez      | Refactored application architecture to lend itself to grading on an individual basis. Created Database ddl and seed scripts. Implemented basic User CRUD functionality. |
+| Sebastian Krawiec     |                                                                                                                                                                         |
+| Dilip Sai Reddy Mettu |                                                                                                                                                                         |
+| Jay Kukadiya          |                                                                                                                                                                         |

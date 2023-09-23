@@ -1,4 +1,4 @@
-package com.online_ordering.user;
+package com.online_ordering.user.dtos;
 
 import lombok.Data;
 

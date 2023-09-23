@@ -1,7 +1,8 @@
 package com.online_ordering.user;
 
-import com.online_ordering.user.User;
 import com.online_ordering.user.abstractions.IUserService;
+import com.online_ordering.user.dtos.CreateUserDTO;
+import com.online_ordering.user.dtos.UpdateUserDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -48,7 +49,7 @@ public class UserController {
     }
 
     @PostMapping("/user/create")
-    public RedirectView Create(CreateNewUserDTO model) {
+    public RedirectView Create(CreateUserDTO model) {
 
         _userService.AddUser(model.getEmail(), model.getPassword());
 
@@ -75,9 +76,4 @@ public class UserController {
 
         return new RedirectView("/user");
     }
-
-
-
-    
-
 }
