@@ -44,7 +44,7 @@ The application should have the following functionality:
 ### Architecture Agreement
 The following team members agree to be graded on an INDIVIDUAL BASIS based on project structure refactoring.
 - [X] Ismael Fernandez 
-- [ ] Sebastian Krawiec 
+- [X] Sebastian Krawiec 
 - [ ] Dilip Sai Reddy Mettu 
 - [ ] Jay Kukadiya
 
