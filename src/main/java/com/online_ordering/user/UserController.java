@@ -57,4 +57,21 @@ public class UserController {
         return new RedirectView("/user");
     }
 
+    @GetMapping("/user/update/{id}")
+    public ModelAndView Update(@PathVariable int id) {
+        ModelAndView modelAndView = new ModelAndView();
+
+        User user = _userService.GetUserById(id);
+
+        modelAndView.addObject("user", user);
+
+        modelAndView.setViewName("user/update");
+
+        return modelAndView;
+    }
+
+
+
+    
+
 }

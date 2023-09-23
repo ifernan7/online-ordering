@@ -26,7 +26,7 @@ public class UserService implements IUserService {
         _userRepository.UpdateUserEmailById(id, email);
     }
 
-    public List<User> GetUserById(int id) {
+    public User GetUserById(int id) {
         return _userRepository.GetUserById(id);
     }
 

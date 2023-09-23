@@ -13,7 +13,7 @@ public interface IUserService {
 
      void UpdateUserEmailById(int id, String email);
 
-     List<User> GetUserById(int id);
+     User GetUserById(int id);
 
      void DeleteUserById(int id);
 }

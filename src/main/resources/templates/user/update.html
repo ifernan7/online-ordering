@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}">
+<head>
+    <title>Users</title>
+</head>
+
+<body>
+<section layout:fragment="content">
+    <h1>Update User</h1>
+    <div class="container">
+        <form method="post" action="/user/update">
+            <div class="form-group">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" name="email" th:value="${user.email}">
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" th:value="${user.id}">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</section>
+</body>
+</html>

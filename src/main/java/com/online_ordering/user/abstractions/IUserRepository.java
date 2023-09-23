@@ -27,7 +27,7 @@ public interface IUserRepository extends JpaRepository<User, Long> {
     void UpdateUserEmailById(@Param("id") int id, @Param("email") String email);
 
     @Query(value = "SELECT id, email FROM online_ordering_db.users WHERE id = :id", nativeQuery = true)
-    List<User> GetUserById(@Param("id") int id);
+    User GetUserById(@Param("id") int id);
 
     @Modifying
     @Transactional
