@@ -3,11 +3,9 @@ package com.online_ordering.user;
 import com.online_ordering.user.User;
 import com.online_ordering.user.abstractions.IUserService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -68,6 +66,14 @@ public class UserController {
         modelAndView.setViewName("user/update");
 
         return modelAndView;
+    }
+
+    @PostMapping("/user/update")
+    public RedirectView updateUser(UpdateUserDTO model) {
+
+        _userService.UpdateUserEmailById(model.getId(), model.getEmail());
+
+        return new RedirectView("/user");
     }
 
 
