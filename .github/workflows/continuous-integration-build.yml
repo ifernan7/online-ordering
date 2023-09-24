@@ -1,4 +1,4 @@
-name: build
+name: Continuous Integration Build
 
 on:
   workflow_dispatch:
@@ -17,5 +17,5 @@ jobs:
           java-version: 20
           distribution: 'temurin'
 
-      - name: Build and Test with Maven
+      - name: Build with Maven
         run: mvn clean compile
