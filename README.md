@@ -73,6 +73,9 @@ Other examples of how our table design supports the requirements include:
 Application Building Successfully via GitHub Actions
 ![Proof Application is Running Via Docker Container](docs/images/proof-application-builds-via-github-action.png)
 
+Proof Application Builds via Local Maven Build
+![Proof Application is Running Via Docker Container](docs/images/proof-application-builds-via-local-maven-build.png)
+
 ### Application Running
 Application Running in Docker Container
 ![Proof Application is Running Via Docker Container](docs/images/proof-application-is-running-via-docker-container.png)
