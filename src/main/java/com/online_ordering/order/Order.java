@@ -10,12 +10,12 @@ import java.util.Date;
 @Entity
 public class Order {
     @Id
-    private Long id;
+    private int id;
 
-    private int user_id;
+    private String email;
 
     private Date order_date;
 
-    private int status_id;
+    private String status;
 }
 
