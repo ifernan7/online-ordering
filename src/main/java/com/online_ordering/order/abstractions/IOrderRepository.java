@@ -9,25 +9,18 @@ import java.util.List;
 
 public interface IOrderRepository extends JpaRepository<Order, Long> {
 
-    @Query(value = "SELECT * FROM Order", nativeQuery = true)
+    @Query(value = "SELECT o.id , u.email , o.order_date , os.status FROM online_ordering_db.orders AS o INNER JOIN online_ordering_db.order_status AS os ON o.status_id = os.id INNER JOIN online_ordering_db.users AS u ON o.user_id = u.id", nativeQuery = true)
     List<Order> GetAllOrders();
 
-    @Query("SELECT o FROM Order o WHERE o.user_id = ?1")
+    @Query(value = "SELECT o.id , u.email , o.order_date , os.status FROM online_ordering_db.orders AS o INNER JOIN online_ordering_db.order_status AS os ON o.status_id = os.id INNER JOIN online_ordering_db.users AS u ON o.user_id = u.id WHERE o.user_id = :userId", nativeQuery = true)
     List<Order> findOrdersByUserId(int userId);
 
-    @Query("SELECT o FROM Order o WHERE o.status_id = ?1")
+    @Query( value = "SELECT o.id , u.email , o.order_date , os.status FROM online_ordering_db.orders AS o INNER JOIN online_ordering_db.order_status AS os ON o.status_id = os.id INNER JOIN online_ordering_db.users AS u ON o.user_id = u.id WHERE o.status_id = :statusId", nativeQuery = true)
     List<Order> findOrdersByStatusId(int statusId);
 
-    @Query("SELECT o FROM Order o WHERE o.order_date BETWEEN ?1 AND ?2")
-    List<Order> findOrdersWithinDateRange(Date startDate, Date endDate);
-
-    @Query(value = "SELECT o.* FROM orders o JOIN users u ON o.user_id = u.id WHERE u.email = ?1", nativeQuery = true)
+    @Query(value = "SELECT o.id , u.email , o.order_date , os.status FROM online_ordering_db.orders AS o INNER JOIN online_ordering_db.order_status AS os ON o.status_id = os.id INNER JOIN online_ordering_db.users AS u ON o.user_id = u.id WHERE u.email = :email", nativeQuery = true)
     List<Order> findOrdersByUserEmail(String email);
 
-    @Query(value = "SELECT o.* FROM orders o JOIN order_status os ON o.status_id = os.id WHERE os.status = ?1", nativeQuery = true)
-    List<Order> findOrdersByStatusDescription(String statusDescription);
-
-    @Query(value = "SELECT o.* FROM orders o JOIN order_products op ON o.id = op.order_id JOIN products p ON op.product_id = p.id WHERE p.name = ?1", nativeQuery = true)
-    List<Order> findOrdersByProductName(String productName);
-
+    @Query(value = "DELETE FROM online_ordering_db.orders WHERE id = :id", nativeQuery = true)
+    List<Order> DeleteOrderById(int id);
 }
