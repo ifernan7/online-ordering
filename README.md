@@ -44,7 +44,7 @@ The application should have the following functionality:
 ### Architecture Agreement
 The following team members agree to be graded on an INDIVIDUAL BASIS based on project structure refactoring.
 - [X] Ismael Fernandez 
-- [ ] Sebastian Krawiec 
+- [X] Sebastian Krawiec 
 - [X] Dilip Sai Reddy Mettu 
 - [ ] Jay Kukadiya
 
@@ -61,6 +61,6 @@ The following team members agree to be graded on an INDIVIDUAL BASIS based on pr
 | Name                  | Contribution                                                                                                                                                                                                                                                       |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Ismael Fernandez      | Refactored application architecture to lend itself to grading on an individual basis. Created Database ddl and seed scripts. Implemented basic User CRUD functionality. Also started to use GitHub issues for task management for all tasks for all group members. |
-| Sebastian Krawiec     |                                                                                                                                                                                                                                                                    |
+| Sebastian Krawiec     | Implemented CRUD functionality for the Product Repository allowing for the creation, selection, modification, and deletion of a product to the server's Database.                                                                                                  |
 | Dilip Sai Reddy Mettu |                                                                                                                                                                                                                                                                    |
 | Jay Kukadiya          |                                                                                                                                                                                                                                                                    |
