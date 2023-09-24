@@ -13,8 +13,6 @@ jobs:
 
       - name: Set up JDK
         uses: actions/setup-java@v2
-        with:
-          java-version: 20
 
       - name: Build and Test with Maven
         run: mvn clean compile
