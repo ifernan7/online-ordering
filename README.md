@@ -71,22 +71,20 @@ Other examples of how our table design supports the requirements include:
 
 ### Clean Compile
 Application Building Successfully via GitHub Actions
-
 ![Proof Application is Running Via Docker Container](docs/images/proof-application-builds-via-github-action.png)
 
 ### Application Running
 Application Running in Docker Container
 ![Proof Application is Running Via Docker Container](docs/images/proof-application-is-running-via-docker-container.png)
+
 Database Running Docker Container
 ![Proof Database is Running Via Docker Container](docs/images/proof-database-is-running-via-docker-container.png)
 
 Application Home Page
-
 ![Proof Web Application Works](docs/images/application-home-page-running.png)
 
 User Index Page
 ![Proof User Home Page Works](docs/images/application-user-index-page-running.png)
-
 
 ### Contribution Summary
 | Name                  | Contribution                                                                                                                                                                                                                                                                                                                                                             |
