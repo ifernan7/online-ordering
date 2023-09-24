@@ -1,46 +1,15 @@
 package com.online_ordering.order;
 
+import com.online_ordering.order.abstractions.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
 
-import java.util.List;
-
-@RestController
-@RequestMapping("/orders")
+@Controller
 public class OrderController {
 
-    @Autowired
-    private OrderService orderService;
+    private final IOrderService _orderService;
 
-    @PostMapping
-    public ResponseEntity<Order> createOrder(@RequestBody Order order) {
-        Order savedOrder = orderService.createOrder(order);
-        return new ResponseEntity<>(savedOrder, HttpStatus.CREATED);
-    }
-
-    @GetMapping
-    public ResponseEntity<List<Order>> getAllOrders() {
-        List<Order> orders = orderService.getOrders();
-        return new ResponseEntity<>(orders, HttpStatus.OK);
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Order> updateOrder(@PathVariable Long id, @RequestBody Order order) {
-        if (!id.equals(order.getId())) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        }
-        Order updatedOrder = orderService.updateOrder(order);
-        if (updatedOrder == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(updatedOrder, HttpStatus.OK);
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteOrder(@PathVariable Long id) {
-        orderService.deleteOrder(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    public OrderController(IOrderService iorderService) {
+        this._orderService = iorderService;
     }
 }
