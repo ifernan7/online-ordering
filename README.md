@@ -44,14 +44,23 @@ The application should have the following functionality:
 ### Architecture Agreement
 The following team members agree to be graded on an INDIVIDUAL BASIS based on project structure refactoring.
 - [X] Ismael Fernandez 
-- [X] Sebastian Krawiec 
-- [ ] Dilip Sai Reddy Mettu 
+- [ ] Sebastian Krawiec 
+- [X] Dilip Sai Reddy Mettu 
 - [ ] Jay Kukadiya
 
+### Database Diagram
+![Database Diagram](docs/images/database-diagram.png)
+
+### GitHub Issues Sample
+![GitHub Issues Sample](docs/images/github-issues-for-task-managment.png)
+
+### Discussion of how our Design met the Requirements
+~ temp ~
+
 ### Contribution Summary
-| Name                  | Contribution |
-|-----------------------|--------------|
-| Ismael Fernandez      |              |
-| Sebastian Krawiec     |              |
-| Dilip Sai Reddy Mettu |              |
-| Jay Kukadiya          |              |
+| Name                  | Contribution                                                                                                                                                                                                                                                       |
+|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Ismael Fernandez      | Refactored application architecture to lend itself to grading on an individual basis. Created Database ddl and seed scripts. Implemented basic User CRUD functionality. Also started to use GitHub issues for task management for all tasks for all group members. |
+| Sebastian Krawiec     |                                                                                                                                                                                                                                                                    |
+| Dilip Sai Reddy Mettu |                                                                                                                                                                                                                                                                    |
+| Jay Kukadiya          |                                                                                                                                                                                                                                                                    |

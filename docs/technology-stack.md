@@ -4,6 +4,7 @@
 ## Backend Technologies
 - Flyway
 - MySQL
+- Docker
 
 ## Frontend Technologies
 - Bootstrap
