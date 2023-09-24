@@ -10,7 +10,7 @@ import java.util.Date;
 @Entity
 public class Order {
     @Id
-    private int id;
+    private Long id;
 
     private int user_id;
 
@@ -18,3 +18,4 @@ public class Order {
 
     private int status_id;
 }
+
