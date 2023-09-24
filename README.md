@@ -43,9 +43,9 @@ The application should have the following functionality:
 ## Milestone 2
 ### Architecture Agreement
 The following team members agree to be graded on an INDIVIDUAL BASIS based on project structure refactoring.
-- [X] Ismael Fernandez 
-- [X] Sebastian Krawiec 
-- [X] Dilip Sai Reddy Mettu 
+- [X] Ismael Fernandez
+- [X] Sebastian Krawiec
+- [X] Dilip Sai Reddy Mettu
 - [ ] Jay Kukadiya
 
 ### Database Diagram
@@ -55,12 +55,43 @@ The following team members agree to be graded on an INDIVIDUAL BASIS based on pr
 ![GitHub Issues Sample](docs/images/github-issues-for-task-managment.png)
 
 ### Discussion of how our Design met the Requirements
-~ temp ~
+Our Design meets the requirements created in Milestone 1 because we have tables to facilitate each unique piece of functionality. We also leverage foreign key constraints to help support some of the requirements. Some examples are in the following tables:
+- Users:
+  - Can't delete a user if they have orders.
+- Products:
+  - Can't delete a product if it has stock in a warehouse.
+- Orders:
+  - Can't delete an order if it has quantities specified in the ```order_products``` table.
+
+Other examples of how our table design supports the requirements include:
+  - We have a table ```warehouse_products``` that is able to keep track of how much stock is available to buy from a certain warehouse for each product.
+  - We have ```NOT NULL``` constraints set on all columns on the ```products``` table so that we can be sure that all product data is getting entered into the system. If a piece of product information is missing the system from a database level will not allow the record to be inserted into the database.
+  - We have a table ```order_products``` that has a column ,```quantity```, for keeping track of the quantities for each product in an order. Based on this column we can validate that the warehouses have enough of that product stocked to complete the order.
+  - Orders can't have random statues, each Order must have a status that is predefined in the ```order_status``` table.
+
+### Clean Compile
+Application Building Successfully via GitHub Actions
+
+![Proof Application is Running Via Docker Container](docs/images/proof-application-builds-via-github-action.png)
+
+### Application Running
+Application Running in Docker Container
+![Proof Application is Running Via Docker Container](docs/images/proof-application-is-running-via-docker-container.png)
+Database Running Docker Container
+![Proof Database is Running Via Docker Container](docs/images/proof-database-is-running-via-docker-container.png)
+
+Application Home Page
+
+![Proof Web Application Works](docs/images/application-home-page-running.png)
+
+User Index Page
+![Proof User Home Page Works](docs/images/application-user-index-page-running.png)
+
 
 ### Contribution Summary
-| Name                  | Contribution                                                                                                                                                                                                                                                       |
-|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Ismael Fernandez      | Refactored application architecture to lend itself to grading on an individual basis. Created Database ddl and seed scripts. Implemented basic User CRUD functionality. Also started to use GitHub issues for task management for all tasks for all group members. |
-| Sebastian Krawiec     | Implemented CRUD functionality for the Product Repository allowing for the creation, selection, modification, and deletion of a product to the server's Database.                                                                                                  |
-| Dilip Sai Reddy Mettu | Implemented CURD functionality for Order Repository allowing to Create, Update , Read and delete of the order to the server's database.                                                                                                                            |
-| Jay Kukadiya          |                                                                                                                                                                                                                                                                    |
+| Name                  | Contribution                                                                                                                                                                                                                                                                                                                                                             |
+|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Ismael Fernandez      | Refactored application architecture to lend itself to grading on an individual basis. Created Database ddl and seed scripts. Implemented basic User CRUD functionality. Also started to use GitHub issues for task management for all tasks for all group members. Implemented simple GitHub action to validate all code will build successfully against a common build. |
+| Sebastian Krawiec     | Implemented CRUD functionality for the Product Repository allowing for the creation, selection, modification, and deletion of a product to the server's Database.                                                                                                                                                                                                        |
+| Dilip Sai Reddy Mettu | Implemented CURD functionality for Order Repository allowing to Create, Update , Read and delete of the order to the server's database.                                                                                                                                                                                                                                  |
+| Jay Kukadiya          |                                                                                                                                                                                                                                                                                                                                                                          |
