@@ -14,12 +14,12 @@ import java.util.List;
 @Repository
 public interface IProductRepository extends JpaRepository<Product, Long> {
     @Query(value = "SELECT id, name, description, price FROM online_ordering_db.products", nativeQuery = true)
-    List<User> GetAllProducts();
+    List<Product> GetAllProducts();
 
     @Modifying
     @Transactional
     @Query(value = "SELECT id, name, description, price FROM online_ordering_db.products WHERE id = :id", nativeQuery = true)
-    void GetProductFromID(@Param("id") int id);
+    Product GetProductFromID(@Param("id") int id);
 
     @Modifying
     @Transactional
