@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface IUserRepository extends JpaRepository<User, Long> {
 
-    @Query(value = "SELECT id, email FROM online_ordering_db.users", nativeQuery = true)
+    @Query(value = "SELECT u.id, u.email, CASE WHEN o.id IS NULL THEN 0 ELSE 1 END AS order_existing FROM online_ordering_db.users AS u LEFT JOIN online_ordering_db.orders AS o ON u.id = o.user_id", nativeQuery = true)
     List<User> GetAllUsers();
 
     @Modifying
@@ -26,7 +26,7 @@ public interface IUserRepository extends JpaRepository<User, Long> {
     @Query(value = "UPDATE online_ordering_db.users SET email = :email WHERE id = :id", nativeQuery = true)
     void UpdateUserEmailById(@Param("id") int id, @Param("email") String email);
 
-    @Query(value = "SELECT id, email FROM online_ordering_db.users WHERE id = :id", nativeQuery = true)
+    @Query(value = "SELECT u.id, u.email, CASE WHEN o.id IS NULL THEN 0 ELSE 1 END AS order_existing FROM online_ordering_db.users AS u LEFT JOIN online_ordering_db.orders AS o ON u.id = o.user_id WHERE u.id = :id", nativeQuery = true)
     User GetUserById(@Param("id") int id);
 
     @Modifying
