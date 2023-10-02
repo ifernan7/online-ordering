@@ -14,7 +14,7 @@ public class Order {
 
     private String email;
 
-    private Date order_date;
+    private Date create_date;
 
     private String status;
 }

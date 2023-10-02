@@ -65,13 +65,14 @@ INSERT INTO products (name, description, price) VALUES
     ('Running Shoes', 'Running shoes with cushioning and support.', 69.99),
     ('Backpack', 'Durable backpack with multiple compartments.', 49.99);
 
-INSERT INTO online_ordering_db.order_status (status)
+INSERT INTO online_ordering_db.order_status (id, status)
 VALUES
-    ('Pending'),
-    ('Processing'),
-    ('Shipped'),
-    ('Delivered');
-INSERT INTO online_ordering_db.orders (user_id, order_date, status_id)
+    (1,'Pending'),
+    (2, 'Processing'),
+    (3, 'Shipped'),
+    (4, 'Delivered');
+
+INSERT INTO online_ordering_db.orders (user_id, create_date, status_id)
 VALUES
     (1, '2023-09-20', 1),
     (2, '2023-09-21', 2),
