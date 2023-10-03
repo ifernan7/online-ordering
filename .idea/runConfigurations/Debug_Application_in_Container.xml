@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="debug" type="Remote">
+  <configuration default="false" name="Debug Application in Container" type="Remote">
     <module name="online_ordering" />
     <option name="USE_SOCKET_TRANSPORT" value="true" />
     <option name="SERVER_MODE" value="false" />
@@ -11,6 +11,8 @@
       <option name="DEBUG_PORT" value="5005" />
       <option name="LOCAL" value="false" />
     </RunnerSettings>
-    <method v="2" />
+    <method v="2">
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Start Application in Container" run_configuration_type="docker-deploy" />
+    </method>
   </configuration>
 </component>
