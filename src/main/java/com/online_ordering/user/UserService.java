@@ -4,6 +4,7 @@ import com.online_ordering.order.Order;
 import com.online_ordering.order.abstractions.IOrderRepository;
 import com.online_ordering.user.abstractions.IUserRepository;
 import com.online_ordering.user.abstractions.IUserService;
+import com.online_ordering.utilities.Response;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -28,8 +29,16 @@ public class UserService implements IUserService {
         _userRepository.AddUser(email,password);
     }
 
-    public void UpdateUserEmailById(int id, String email) {
-        _userRepository.UpdateUserEmailById(id, email);
+    public Response<Boolean> UpdateUserEmailById(int id, String email) {
+
+        if(!email.isEmpty() || !email.isBlank()) {
+
+            _userRepository.UpdateUserEmailById(id, email);
+
+            return new Response<Boolean>(true, "Update Succeeded.");
+        }
+
+        return new Response<Boolean>(false, "Update failed, please try again.");
     }
 
     public User GetUserById(int id) {

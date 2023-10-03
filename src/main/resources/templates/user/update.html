@@ -10,17 +10,22 @@
 <body>
 <section layout:fragment="content">
     <h1>Update User</h1>
+
+    <div th:if="${viewModel.message != null}">
+        <p th:text="${viewModel.message}"></p>
+    </div>
+
     <div class="container">
         <form method="post" action="/user/update" >
             <div class="form-group">
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" id="email" name="email" th:value="${user.email}">
+                        <input type="text" class="form-control" id="email" name="email" th:value="${viewModel.data.email}">
                     </div>
                 </div>
             </div>
-            <input type="hidden" th:value="${user.id}" name="id">
+            <input type="hidden" th:value="${viewModel.data.id}" name="id">
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
