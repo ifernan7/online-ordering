@@ -1,6 +1,7 @@
 package com.online_ordering.user.abstractions;
 
 import com.online_ordering.user.User;
+import com.online_ordering.utilities.Response;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public interface IUserService {
 
      void AddUser(String email, String password);
 
-     void UpdateUserEmailById(int id, String email);
+     Response<Boolean> UpdateUserEmailById(int id, String email);
 
      User GetUserById(int id);
 

@@ -3,6 +3,8 @@ package com.online_ordering.user;
 import com.online_ordering.user.abstractions.IUserService;
 import com.online_ordering.user.dtos.CreateUserDTO;
 import com.online_ordering.user.dtos.UpdateUserDTO;
+import com.online_ordering.utilities.Response;
+import com.online_ordering.utilities.ViewModelBase;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -58,21 +60,27 @@ public class UserController {
 
     @GetMapping("/user/update/{id}")
     public ModelAndView Update(@PathVariable int id) {
-        ModelAndView modelAndView = new ModelAndView();
 
         User user = _userService.GetUserById(id);
 
-        modelAndView.addObject("user", user);
+        ViewModelBase<User> viewModel = new ViewModelBase<User>(user, null);
 
-        modelAndView.setViewName("user/update");
-
-        return modelAndView;
+        return new ModelAndView("user/update", "viewModel", viewModel);
     }
 
     @PostMapping("/user/update")
-    public RedirectView updateUser(UpdateUserDTO model) {
+    public Object Update(UpdateUserDTO model) {
 
-        _userService.UpdateUserEmailById(model.getId(), model.getEmail());
+        Response<Boolean> response = _userService.UpdateUserEmailById(model.getId(), model.getEmail());
+
+        if(!response.getData()){
+
+            User user = _userService.GetUserById(model.getId());
+
+            ViewModelBase<User> viewModel = new ViewModelBase<User>(user, response.getMessage());
+
+            return new ModelAndView("user/update", "viewModel", viewModel);
+        }
 
         return new RedirectView("/user");
     }

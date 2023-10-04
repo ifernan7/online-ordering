@@ -28,14 +28,14 @@ CREATE TABLE users (
 );
 
 CREATE TABLE order_status (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT PRIMARY KEY,
     status VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE orders (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
-    order_date DATE NOT NULL,
+    create_date DATE NOT NULL,
     status_id INT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (status_id) REFERENCES order_status(id)

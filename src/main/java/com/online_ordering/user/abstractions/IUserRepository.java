@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface IUserRepository extends JpaRepository<User, Long> {
 
-    @Query(value = "SELECT u.id, u.email, CASE WHEN o.id IS NULL THEN 0 ELSE 1 END AS order_existing FROM online_ordering_db.users AS u LEFT JOIN online_ordering_db.orders AS o ON u.id = o.user_id", nativeQuery = true)
+    @Query(value = "SELECT DISTINCT u.id, u.email, CASE WHEN o.id IS NULL THEN 0 ELSE 1 END AS order_existing FROM online_ordering_db.users AS u LEFT JOIN online_ordering_db.orders AS o ON u.id = o.user_id", nativeQuery = true)
     List<User> GetAllUsers();
 
     @Modifying
