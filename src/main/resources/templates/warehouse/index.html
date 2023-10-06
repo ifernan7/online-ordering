@@ -10,6 +10,23 @@
 <body>
 <section layout:fragment="content">
     <h1>Warehouses</h1>
+    <a th:href="@{/warehouse/create}">Create a Warehouse</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>City</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="object : ${warehouses}">
+            <td th:text="${object.id}"></td>
+            <td th:text="${object.name}"></td>
+            <td th:text="${object.city}"></td>
+        </tr>
+        </tbody>
+    </table>
 </section>
 </body>
 </html>

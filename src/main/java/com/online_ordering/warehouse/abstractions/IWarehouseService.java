@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface IWarehouseService {
     List<Warehouse> GetAllWarehouses();
+    void AddWarehouse(String name, String city);
+
 }

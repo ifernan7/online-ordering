@@ -96,3 +96,13 @@ User Index Page
 | Sebastian Krawiec     | Implemented CRUD functionality for the Product Repository allowing for the creation, selection, modification, and deletion of a product to the server's Database.                                                                                                                                                                                                        |
 | Dilip Sai Reddy Mettu | Implemented CURD functionality for Order Repository allowing to Create, Update , Read and delete of the order to the server's database.                                                                                                                                                                                                                                  |
 | Jay Kukadiya          |                                                                                                                                                                                                                                                                                                                                                                          |
+
+## Milestone 3
+
+### Contribution Summary
+| Name                  | Contribution                                                                |
+|-----------------------|-----------------------------------------------------------------------------|
+| Ismael Fernandez      | Created warehouse UI to display all warehouses and to create new warehoues. |
+| Sebastian Krawiec     |                                                                             |
+| Dilip Sai Reddy Mettu |                                                                             |
+| Jay Kukadiya          |                                                                             |

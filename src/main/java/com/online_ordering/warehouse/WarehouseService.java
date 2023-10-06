@@ -17,4 +17,8 @@ public class WarehouseService implements IWarehouseService {
     public List<Warehouse> GetAllWarehouses() {
         return _warehouseRepository.GetAllWarehouses();
     }
+
+    public void AddWarehouse(String name, String city){
+        _warehouseRepository.AddWarehouse(name, city);
+    }
 }
