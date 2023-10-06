@@ -3,6 +3,8 @@ package com.online_ordering.order;
 import com.online_ordering.order.abstractions.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class OrderController {
@@ -12,4 +14,13 @@ public class OrderController {
     public OrderController(IOrderService iorderService) {
         this._orderService = iorderService;
     }
+
+    @GetMapping("/order")
+    public ModelAndView Index() {
+        ModelAndView modelAndView = new ModelAndView();
+
+        modelAndView.setViewName("order/index");
+        return modelAndView;
+    }
+
 }
