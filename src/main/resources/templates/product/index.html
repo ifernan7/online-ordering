@@ -4,12 +4,40 @@
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{layout.html}">
 <head>
-    <title>Users</title>
+    <title>Products</title>
 </head>
 
 <body>
 <section layout:fragment="content">
-    <p>product</p>
+    <h1>Products</h1>
+    <a th:href="@{/product/create}">Add a product</a>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Stock Number</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="object : ${products}">
+            <td th:text="${object.id}"></td>
+            <td th:text="${object.name}"></td>
+            <td th:text="${object.description}"></td>
+            <td th:text="${object.stockNumber}"></td>
+            <td th:text="${object.price}"></td>
+            <td>
+                <a th:href="@{'/user/update/' + ${object.id}}">Update</a>
+                <a th:if="${object.orderExisting}" th:text="Delete" title="Can't Delete Has Existing Order">Delete</a>
+                <a th:if="${!object.orderExisting}" th:href="@{'/product/delete/' + ${object.id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </section>
 </body>
 </html>
