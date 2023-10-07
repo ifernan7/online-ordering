@@ -8,7 +8,7 @@ public interface IProductService {
 
     List<Product> GetAllProducts();
 
-    void GetProductFromID(int id);
+    Product GetProductFromID(int id);
 
     void AddProduct(String name, String description, String price);
 
