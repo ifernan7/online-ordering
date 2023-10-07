@@ -16,7 +16,6 @@ public interface IProductRepository extends JpaRepository<Product, Long> {
     @Query(value = "SELECT id, name, description, price FROM online_ordering_db.products", nativeQuery = true)
     List<Product> GetAllProducts();
 
-    @Modifying
     @Transactional
     @Query(value = "SELECT id, name, description, price FROM online_ordering_db.products WHERE id = :id", nativeQuery = true)
     Product GetProductFromID(@Param("id") int id);
@@ -28,7 +27,7 @@ public interface IProductRepository extends JpaRepository<Product, Long> {
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE online_ordering_db.products SET (name, description, price) VALUES (:name, :description, :price) WHERE id = :id", nativeQuery = true)
+    @Query(value = "UPDATE online_ordering_db.products SET name = :name, description = :description, price = :price WHERE id = :id", nativeQuery = true)
     void ModifyProduct(@Param("id") int id, @Param("name") String name, @Param("description") String description, @Param("price") String price);
 
     @Modifying
