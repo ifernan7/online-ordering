@@ -18,7 +18,6 @@
             <th>ID</th>
             <th>Name</th>
             <th>Description</th>
-            <th>Stock Number</th>
             <th>Price</th>
             <th>Action</th>
         </tr>
@@ -28,7 +27,6 @@
             <td th:text="${object.id}"></td>
             <td th:text="${object.name}"></td>
             <td th:text="${object.description}"></td>
-            <td th:text="${object.stockNumber}"></td>
             <td th:text="${object.price}"></td>
             <td>
                 <a th:href="@{'/user/update/' + ${object.id}}">Update</a>
