@@ -1,7 +1,6 @@
 package com.online_ordering.product.abstractions;
 
 import com.online_ordering.product.Product;
-import com.online_ordering.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

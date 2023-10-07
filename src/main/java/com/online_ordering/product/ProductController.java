@@ -19,7 +19,7 @@ public class ProductController {
 
     private final IProductService _productService;
 
-    public ProductController(IProductService productService){
+    public ProductController(IProductService productService) {
         this._productService = productService;
     }
 
@@ -37,7 +37,7 @@ public class ProductController {
     }
 
     @GetMapping("/product/delete/{id}")
-    public RedirectView Delete(@PathVariable int id){
+    public RedirectView Delete(@PathVariable int id) {
         _productService.DeleteProductFromID(id);
 
         return new RedirectView("/product");
@@ -76,7 +76,7 @@ public class ProductController {
 
         Response<Boolean> response = _productService.ModifyProduct(model.getId(), model.getName(), model.getDescription(), model.getPrice());
 
-        if(!response.getData()){
+        if (!response.getData()) {
 
             Product product = _productService.GetProductFromID(model.getId());
 

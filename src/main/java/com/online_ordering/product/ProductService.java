@@ -4,11 +4,11 @@ import com.online_ordering.order.Order;
 import com.online_ordering.order.abstractions.IOrderRepository;
 import com.online_ordering.product.abstractions.IProductRepository;
 import com.online_ordering.product.abstractions.IProductService;
-import com.online_ordering.user.UserService;
 import com.online_ordering.utilities.Response;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class ProductService implements IProductService {
 
@@ -16,12 +16,12 @@ public class ProductService implements IProductService {
     private final IOrderRepository _orderRepository;
 
 
-    public ProductService(IProductRepository productRepository, IOrderRepository orderRepository){
+    public ProductService(IProductRepository productRepository, IOrderRepository orderRepository) {
         this._productRepository = productRepository;
         this._orderRepository = orderRepository;
     }
 
-    public List<Product> GetAllProducts(){
+    public List<Product> GetAllProducts() {
         return _productRepository.GetAllProducts();
     }
 
@@ -39,7 +39,7 @@ public class ProductService implements IProductService {
 
     public Response<Boolean> ModifyProduct(int id, String name, String description, String price) {
         //doing name for now
-        if(!name.isEmpty() || !name.isBlank()){
+        if (!name.isEmpty() || !name.isBlank()) {
             _productRepository.ModifyProduct(id, name, description, price);
             return new Response<Boolean>(true, "Update Succeeded");
         }
@@ -52,7 +52,7 @@ public class ProductService implements IProductService {
 
         List<Order> orders = _orderRepository.findOrdersByUserId(id);
 
-        if(orders.isEmpty()){
+        if (orders.isEmpty()) {
             _productRepository.DeleteProductFromID(id);
         }
 
