@@ -23,4 +23,20 @@ public class OrderController {
         return modelAndView;
     }
 
+    @GetMapping("/order/create")
+    public ModelAndView Create() {
+        ModelAndView modelAndView = new ModelAndView();
+
+        modelAndView.setViewName("order/create");
+        return modelAndView;
+    }
+
+    @GetMapping("/order/update")
+    public ModelAndView Update() {
+        ModelAndView modelAndView = new ModelAndView();
+
+        modelAndView.setViewName("order/update");
+        return modelAndView;
+    }
+
 }
