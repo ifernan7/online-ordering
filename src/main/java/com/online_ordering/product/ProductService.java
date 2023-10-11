@@ -15,7 +15,6 @@ public class ProductService implements IProductService {
     private final IProductRepository _productRepository;
     private final IOrderRepository _orderRepository;
 
-
     public ProductService(IProductRepository productRepository, IOrderRepository orderRepository) {
         this._productRepository = productRepository;
         this._orderRepository = orderRepository;
@@ -25,38 +24,31 @@ public class ProductService implements IProductService {
         return _productRepository.GetAllProducts();
     }
 
-
     public Product GetProductFromID(int id) {
-
         return _productRepository.GetProductFromID(id);
     }
-
 
     public void AddProduct(String name, String description, String price) {
         _productRepository.AddProduct(name, description, price);
     }
 
-
     public Response<Boolean> ModifyProduct(int id, String name, String description, String price) {
+
         //doing name for now
         if (!name.isEmpty() || !name.isBlank()) {
             _productRepository.ModifyProduct(id, name, description, price);
             return new Response<Boolean>(true, "Update Succeeded");
         }
+
         return new Response<Boolean>(false, "Update Failed");
-
     }
-
 
     public void DeleteProductFromID(int id) {
 
-        List<Order> orders = _orderRepository.findOrdersByUserId(id);
+        Order order = _orderRepository.GetOrderById(id);
 
-        if (orders.isEmpty()) {
+        if (order == null) {
             _productRepository.DeleteProductFromID(id);
         }
-
     }
-
-
 }
