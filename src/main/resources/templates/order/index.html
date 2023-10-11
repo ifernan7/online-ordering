@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="header">
+    <h1>My Store</h1>
+</div>
+<ul class="nav">
+    <li><a href="#home"><button>Home</button></a></li>
+    <li><a href="#products"><button>Products</button></a></li>
+    <li><a href="mycart.html"><button>MyCart</button></a></li>
+    <li><a href="myaccount.html"><button>My Account</button></a></li>
+</ul>
+<div class="container">
+    <h1>Add Product to Cart</h1>
+    <form action="mycart.html" method="post">
+
+        <label for="product">Product:</label>
+        <select id="product" name="product" required>
+
+            <option value="Product1">Product 1 </option>
+            <option value="Product2">Product 2 </option>
+            <option value="Product3">Product 3 </option>
+            <option value="Product4">Product 4 </option>
+            <option value="Product5">Product 5 </option>
+            <option value="Product6">Product 6 </option>
+            <option value="Product7">Product 7 </option>
+            <option value="Product8">Product 8 </option>
+            <option value="Product9">Product 9 </option>
+            <option value="Product10">Product 10 </option>
+            <option value="Product11">Product 11 </option>
+            <option value="Product12">Product 12</option>
+            <option value="Product13">Product 13</option>
+            <option value="Product14">Product 14</option>
+            <option value="Product15">Product 15</option>
+            <option value="Product16">Product 16</option>
+            <option value="Product17">Product 17</option>
+            <option value="Product18">Product 18</option>
+            <option value="Produc19t">Product 19</option>
+            <option value="Product20">Product 20</option>
+            <option value="Product21">Product 21</option>
+            <option value="Product22">Product 22</option>
+            <option value="Product23">Product 23</option>
+            <option value="Product24">Product 24</option>
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required>
+
+        <input type="submit" value="Add to Cart">
+    </form>
+</div>
+</body>
+</html>
