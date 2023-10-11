@@ -12,7 +12,12 @@ import java.util.List;
 
 @Repository
 public interface IProductRepository extends JpaRepository<Product, Long> {
-    @Query(value = "SELECT id, name, description, price FROM online_ordering_db.products", nativeQuery = true)
+
+
+    //SELECT p.id ,p.name ,p.description ,p.price ,CASE WHEN op.id IS NULL THEN 0 ELSE 1 END AS on_order FROM online_ordering_db.products p LEFT JOIN online_ordering_db.order_products op ON p.id = op.product_id
+    //@Query(value = "SELECT id, name, description, price FROM online_ordering_db.products", nativeQuery = true)
+
+    @Query(value = "SELECT p.id ,p.name ,p.description ,p.price ,CASE WHEN op.id IS NULL THEN 0 ELSE 1 END AS on_order FROM online_ordering_db.products p LEFT JOIN online_ordering_db.order_products op ON p.id = op.product_id", nativeQuery = true)
     List<Product> GetAllProducts();
 
     @Transactional

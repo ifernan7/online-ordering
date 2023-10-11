@@ -30,11 +30,8 @@
             <td th:text="${object.price}"></td>
             <td>
                 <a th:href="@{'/product/update/' + ${object.id}}">Update</a>
-                <!-- REMOVED IF STATEMENTS TO TEST WILL NEED TO REPLACE/FIX AT SOME POINT
-                <a th:if="${object.orderExisting}" th:text="Delete" title="Can't Delete Has Existing Order">Delete</a>
-                <a th:if="${!object.orderExisting}" th:href="@{'/product/delete/' + ${object.id}}">Delete</a>
-                -->
-                <a th:href="@{'/product/delete/' + ${object.id}}">Delete</a>
+                <a th:if="${object.onOrder}" th:text="Delete" title="Can't Delete On Existing Order">Delete</a>
+                <a th:if="${!object.onOrder}" th:href="@{'/product/delete/' + ${object.id}}">Delete</a>
             </td>
         </tr>
         </tbody>

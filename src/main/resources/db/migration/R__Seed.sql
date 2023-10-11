@@ -79,3 +79,8 @@ VALUES
     (1, '2023-09-21', 3),
     (3, '2023-09-22', 1);
 
+INSERT INTO online_ordering_db.order_products (order_id, product_id, quantity)
+VALUES
+    (1, 1, 1),
+    (2, 2, 1),
+    (3, 3, 1);
