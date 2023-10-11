@@ -76,7 +76,6 @@ INSERT INTO online_ordering_db.orders (user_id, create_date, status_id)
 VALUES
     (1, '2023-09-20', 1),
     (2, '2023-09-21', 2),
-    (1, '2023-09-21', 3),
     (3, '2023-09-22', 1);
 
 INSERT INTO online_ordering_db.order_products (order_id, product_id, quantity)
