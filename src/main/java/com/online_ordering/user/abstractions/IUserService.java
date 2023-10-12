@@ -10,7 +10,7 @@ public interface IUserService {
 
      List<User> GetAllUsers();
 
-     void AddUser(String email, String password);
+     Response<Boolean> AddUser(String email, String password);
 
      Response<Boolean> UpdateUserEmailById(int id, String email);
 

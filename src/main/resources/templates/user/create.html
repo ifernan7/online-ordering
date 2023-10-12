@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html
+        xmlns:th="http://www.thymeleaf.org"
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{layout}">
 <head>
@@ -9,13 +10,18 @@
 <body>
 <section layout:fragment="content">
     <h1>Create User</h1>
+
+    <div th:if="${viewModel.message != null}">
+        <p th:text="${viewModel.message}"></p>
+    </div>
+
     <div class="container">
         <form method="post" action="/user/create">
             <div class="form-group">
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" id="email" name="email">
+                        <input type="text" class="form-control" id="email" name="email" th:value="${viewModel.data.email}">
                     </div>
                 </div>
             </div>
@@ -23,16 +29,13 @@
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password">
+                        <input type="password" class="form-control" id="password" name="password" th:value="${viewModel.data.password}">
                     </div>
                 </div>
             </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-
-
-
 </section>
 </body>
 </html>

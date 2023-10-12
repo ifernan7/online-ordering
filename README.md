@@ -97,12 +97,22 @@ User Index Page
 | Dilip Sai Reddy Mettu | Implemented CURD functionality for Order Repository allowing to Create, Update , Read and delete of the order to the server's database.                                                                                                                                                                                                                                  |
 | Jay Kukadiya          |                                                                                                                                                                                                                                                                                                                                                                          |
 
+
+
+
+
 ## Milestone 3
 
+
+### Clean Compile
+
+### Application Running
+
+
 ### Contribution Summary
-| Name                  | Contribution                                                                |
-|-----------------------|-----------------------------------------------------------------------------|
-| Ismael Fernandez      | Created warehouse UI to display all warehouses and to create new warehoues. |
-| Sebastian Krawiec     |                                                                             |
-| Dilip Sai Reddy Mettu |                                                                             |
-| Jay Kukadiya          |                                                                             |
+| Name                  | Contribution                                                                                                                                                                                                    |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Ismael Fernandez      | Created warehouse UI to display all warehouses and to create new warehoues. Added validations for user CRUD, can't update a users email to an empty string, can't update an email to an already existing email. |
+| Sebastian Krawiec     |                                                                                                                                                                                                                 |
+| Dilip Sai Reddy Mettu |                                                                                                                                                                                                                 |
+| Jay Kukadiya          |                                                                                                                                                                                                                 |

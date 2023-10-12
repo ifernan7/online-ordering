@@ -25,20 +25,59 @@ public class UserService implements IUserService {
         return  _userRepository.GetAllUsers();
     }
 
-    public void AddUser(String email, String password) {
+    public Response<Boolean> AddUser(String email, String password) {
+
+        if (email.isBlank() && password.isBlank()) {
+            return new Response<Boolean>(false,"Please enter email and password.");
+        }
+
+        if (email.isBlank()) {
+            return new Response<Boolean>(false,"Please enter email.");
+        }
+
+        if (password.isBlank()) {
+            return new Response<Boolean>(false,"Please enter password.");
+        }
+
+        List<User> users = _userRepository.GetAllUsers();
+
+        for (User user : users) {
+            if(user.getEmail().equals(email)) {
+                return new Response<Boolean>(false, "Email already exists, please enter different email.");
+            }
+        }
+
         _userRepository.AddUser(email,password);
+
+         users = _userRepository.GetAllUsers();
+
+        for (User user : users) {
+            if(user.getEmail().equals(email)) {
+                return new Response<Boolean>(true, "good job the user got added correctly!!");
+            }
+        }
+
+        return new Response<Boolean>(false,"failure please try again...");
     }
 
     public Response<Boolean> UpdateUserEmailById(int id, String email) {
 
-        if(!email.isEmpty() || !email.isBlank()) {
+        if(!email.isBlank()) {
+            List<User> users = _userRepository.GetAllUsers();
 
-            _userRepository.UpdateUserEmailById(id, email);
-
-            return new Response<Boolean>(true, "Update Succeeded.");
+            for (User user : users) {
+                if(user.getEmail().equals(email)) {
+                    return new Response<Boolean>(false, "Email already exists, please enter different email.");
+                }
+            }
+        }
+        else{
+            return new Response<Boolean>(false, "Please enter an email, email cannot be empty text.");
         }
 
-        return new Response<Boolean>(false, "Update failed, please try again.");
+        _userRepository.UpdateUserEmailById(id, email);
+
+        return new Response<Boolean>(true, "Update Succeeded.");
     }
 
     public User GetUserById(int id) {
