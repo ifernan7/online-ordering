@@ -46,17 +46,21 @@ public class ProductController {
     @GetMapping("/product/create")
     public ModelAndView Create() {
 
-        ModelAndView modelAndView = new ModelAndView();
+        ViewModelBase<CreateProductDTO> viewModel = new ViewModelBase<CreateProductDTO>(new CreateProductDTO(), null);
 
-        modelAndView.setViewName("product/create");
-
-        return modelAndView;
+        return new ModelAndView("product/create","viewModel", viewModel);
     }
 
     @PostMapping("/product/create")
-    public RedirectView Create(CreateProductDTO model) {
+    public Object Create(CreateProductDTO model) {
 
-        _productService.AddProduct(model.getName(), model.getDescription(), model.getPrice());
+        Response<Boolean> response = _productService.AddProduct(model.getName(), model.getDescription(), model.getPrice());
+
+        if (!response.getData()){
+            ViewModelBase<CreateProductDTO> viewModel = new ViewModelBase<CreateProductDTO>(model, response.getMessage());
+
+            return new ModelAndView("product/create", "viewModel", viewModel);
+        }
 
         return new RedirectView("/product");
     }

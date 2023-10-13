@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html
+        xmlns:th="http://www.thymeleaf.org"
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{layout}">
 <head>
@@ -9,13 +10,18 @@
 <body>
 <section layout:fragment="content">
   <h1>Add Product</h1>
+
+  <div th:if="${viewModel.message != null}">
+    <p th:text="${viewModel.message}"></p>
+  </div>
+
   <div class="container">
     <form method="post" action="/product/create">
       <div class="form-group">
         <div class="row mb-3">
           <div class="col-md-6">
             <label for="name">Product Name</label>
-            <input type="text" class="form-control" id="name" name="name">
+            <input type="text" class="form-control" id="name" name="name" th:value="${viewModel.data.name}">
           </div>
         </div>
       </div>
@@ -23,7 +29,7 @@
         <div class="row mb-3">
           <div class="col-md-6">
             <label for="description">Product Description</label>
-            <input type="text" class="form-control" id="description" name="description">
+            <input type="text" class="form-control" id="description" name="description" th:value="${viewModel.data.description}">
           </div>
         </div>
       </div>
@@ -31,16 +37,13 @@
         <div class="row mb-3">
           <div class="col-md-6">
             <label for="description">Product Price</label>
-            <input type="text" class="form-control" id="price" name="price">
+            <input type="text" class="form-control" id="price" name="price" th:value="${viewModel.data.price}">
           </div>
         </div>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
-
-
-
 </section>
 </body>
 </html>
