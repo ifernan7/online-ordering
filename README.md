@@ -114,6 +114,9 @@ Trying to add a user with no email
 Trying to add a user with no password
 ![Validation Proof when no password entered](docs/images/milestone-3-images/trying-to-add-a-user-with-no-password.png)
 
+Trying to delete a user with an active order
+![Validation Proof when trying to delete a user with an active order](docs/images/milestone-3-images/user-has-active-order.png)
+
 ## Enhanced Product Functionality
 
 Trying to add a product with no name
