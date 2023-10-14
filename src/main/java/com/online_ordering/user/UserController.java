@@ -43,17 +43,22 @@ public class UserController {
     @GetMapping("/user/create")
     public ModelAndView Create() {
 
-        ModelAndView modelAndView = new ModelAndView();
+        ViewModelBase<CreateUserDTO> viewModel = new ViewModelBase<CreateUserDTO>(new CreateUserDTO(), null);
 
-        modelAndView.setViewName("user/create");
-
-        return modelAndView;
+        return new ModelAndView("user/create","viewModel",viewModel);
     }
 
     @PostMapping("/user/create")
-    public RedirectView Create(CreateUserDTO model) {
+    public Object Create(CreateUserDTO model) {
 
-        _userService.AddUser(model.getEmail(), model.getPassword());
+        Response<Boolean> response = _userService.AddUser(model.getEmail(), model.getPassword());
+
+        if(!response.getData()) {
+
+            ViewModelBase<CreateUserDTO> viewModel = new ViewModelBase<CreateUserDTO>(model, response.getMessage());
+
+            return new ModelAndView("user/create", "viewModel", viewModel);
+        }
 
         return new RedirectView("/user");
     }
