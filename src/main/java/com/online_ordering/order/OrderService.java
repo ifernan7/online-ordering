@@ -13,13 +13,15 @@ import java.util.List;
 public class OrderService implements IOrderService {
 
     @Autowired
-    public IOrderRepository _orderRepository;
+    public static IOrderRepository _orderRepository;
 
     public OrderService(IOrderRepository orderRepository) {
         this._orderRepository = orderRepository;
     }
 
-    public List<Order> GetAllOrders() {
+
+
+    public static List<Order> GetAllOrders() {
         return _orderRepository.GetAllOrders();
     }
 
