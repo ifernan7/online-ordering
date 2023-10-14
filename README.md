@@ -97,22 +97,36 @@ User Index Page
 | Dilip Sai Reddy Mettu | Implemented CURD functionality for Order Repository allowing to Create, Update , Read and delete of the order to the server's database.                                                                                                                                                                                                                                  |
 | Jay Kukadiya          |                                                                                                                                                                                                                                                                                                                                                                          |
 
-
-
-
-
 ## Milestone 3
-
+The primary focus during this Milestone was to create a UI that would be able to communicate to our persistence layer via a service layer. Some of our UI functionality is supposed by additional processing that was created in our service layer.
 
 ### Clean Compile
+~ temp ~ 
 
-### Application Running
+## Enhanced User Functionality
+
+Trying to add a user with no email or password
+![Validation Proof when no email or password entered](docs/images/milestone-3-images/trying-to-add-a-user-with-no-email-or-password.png)
+
+Trying to add a user with no email
+![Validation Proof when no email entered](docs/images/milestone-3-images/trying-to-add-a-user-with-no-email.png)
+
+Trying to add a user with no password
+![Validation Proof when no password entered](docs/images/milestone-3-images/trying-to-add-a-user-with-no-password.png)
+
+## Enhanced Product Functionality
+
+Trying to add a product with no name
+![Validation Proof when no name entered](docs/images/milestone-3-images/products/trying-to-add-empty-product-name.png)
+
+Trying to add a product with a negative price
+![Validation Proof when no name entered](docs/images/milestone-3-images/products/trying-add-product-with-negative-price.png)
 
 
 ### Contribution Summary
-| Name                  | Contribution                                                                                                                                                                                                    |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Ismael Fernandez      | Created warehouse UI to display all warehouses and to create new warehoues. Added validations for user CRUD, can't update a users email to an empty string, can't update an email to an already existing email. |
-| Sebastian Krawiec     |                                                                                                                                                                                                                 |
-| Dilip Sai Reddy Mettu |                                                                                                                                                                                                                 |
-| Jay Kukadiya          |                                                                                                                                                                                                                 |
+| Name                  | Contribution                                                                                                                                                                                                                                                       |
+|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Ismael Fernandez      | Created warehouse UI to display all warehouses and to create new warehouses. Added validations for user CRUD, can't update a users email to an empty string, can't update an email to an already existing email. Also can't delete a user that has an active order |
+| Sebastian Krawiec     |                                                                                                                                                                                                                                                                    |
+| Dilip Sai Reddy Mettu |                                                                                                                                                                                                                                                                    |
+| Jay Kukadiya          |                                                                                                                                                                                                                                                                    |
