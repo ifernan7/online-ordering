@@ -11,7 +11,7 @@ public interface IProductService {
 
     Product GetProductFromID(int id);
 
-    void AddProduct(String name, String description, String price);
+    Response<Boolean> AddProduct(String name, String description, String price);
 
     Response<Boolean> ModifyProduct(int id, String name, String description, String price);
 
