@@ -1,6 +1,8 @@
 package com.online_ordering.order.abstractions;
 
 import com.online_ordering.order.Order;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -15,4 +17,6 @@ public interface IOrderService {
     List<Order> findOrdersByUserEmail(String email);
 
     void DeleteOrderById(int id);
+
+    Order GetOrderById(int id);
 }

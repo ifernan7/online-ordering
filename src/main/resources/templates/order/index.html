@@ -29,8 +29,8 @@
             <td th:text="${order.create_date}"></td>
             <td th:text="${order.status}"></td>
             <td>
-                <a th:href="@{/order/edit/{id}(id=${order.id})}">Edit</a> |
-                <a th:href="@{/order/delete/{id}(id=${order.id})}" th:onclick="'return confirm(\'Are you sure you want to delete this order?\');'">Delete</a>
+                <a th:href="@{'/order/update/' + ${order.id}}">Update</a> |
+                <a th:href="@{'/order/delete/' + ${order.id}}" th:onclick="'return confirm(\'Are you sure you want to delete this order?\');'">Delete</a>
             </td>
         </tr>
         </tbody>
