@@ -5,9 +5,8 @@ import com.online_ordering.order.Order;
 import java.util.List;
 
 public interface IOrderService {
-    static List<Order> GetAllOrders() {
-        return null;
-    }
+
+    List<Order> GetAllOrders();
 
     List<Order> findOrdersByUserId(int userId);
 

@@ -18,35 +18,21 @@ public class OrderController {
         this._orderService = iorderService;
     }
 
-    @GetMapping("/orders")
-    public String showOrders(Model model) {
-        List<Order> orders = OrderService.GetAllOrders();
-        model.addAttribute("orders", orders);
-        return "orders";  // Name of your Thymeleaf template
-    }
-
     @GetMapping("/order")
     public ModelAndView Index() {
-        ModelAndView modelAndView = new ModelAndView();
 
-        modelAndView.setViewName("order/index");
-        return modelAndView;
+        List<Order> orders = _orderService.GetAllOrders();
+
+        return new ModelAndView("order/index", "orders", orders);
     }
 
     @GetMapping("/order/create")
     public ModelAndView Create() {
-        ModelAndView modelAndView = new ModelAndView();
-
-        modelAndView.setViewName("order/create");
-        return modelAndView;
+        return new ModelAndView("order/create");
     }
 
     @GetMapping("/order/update")
     public ModelAndView Update() {
-        ModelAndView modelAndView = new ModelAndView();
-
-        modelAndView.setViewName("order/update");
-        return modelAndView;
+        return new ModelAndView("order/create");
     }
-
 }

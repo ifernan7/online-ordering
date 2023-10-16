@@ -9,7 +9,12 @@
 
 <body>
 <section layout:fragment="content">
-    <h1>Orders</h1>
+    <h1>Create Order</h1>
+
+    <div th:if="${viewModel.message != null}">
+        <p th:text="${viewModel.message}"></p>
+    </div>
+
 </section>
 </body>
 </html>
