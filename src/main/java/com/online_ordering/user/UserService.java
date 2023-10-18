@@ -53,7 +53,7 @@ public class UserService implements IUserService {
 
         for (User user : users) {
             if(user.getEmail().equals(email)) {
-                return new Response<Boolean>(true, "good job the user got added correctly!!");
+                return new Response<Boolean>(true, "Successfully added new user!");
             }
         }
 
