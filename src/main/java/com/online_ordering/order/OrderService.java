@@ -38,4 +38,8 @@ public class OrderService implements IOrderService {
     public void DeleteOrderById(int id) {
         _orderRepository.DeleteOrderById(id);
     }
+
+    public Order GetOrderById(int id) {
+        return  _orderRepository.GetOrderById(id);
+    }
 }
