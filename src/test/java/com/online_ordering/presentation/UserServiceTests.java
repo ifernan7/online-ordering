@@ -64,4 +64,27 @@ class UserServiceTests {
 		assertEquals(false, response.getData());
 	}
 
+	@Test
+	public void AddUser_does_not_add_user_when_password_empty() {
+		IUserRepository userRepository = Mockito.mock(IUserRepository.class);
+		IOrderRepository order = Mockito.mock(IOrderRepository.class);
+
+		UserService userService = new UserService(userRepository, order);
+
+		Response<Boolean> response = userService.AddUser("test","");
+
+		assertEquals(false, response.getData());
+	}
+
+	@Test
+	public void AddUser_does_not_add_user_when_email_and_password_empty() {
+		IUserRepository userRepository = Mockito.mock(IUserRepository.class);
+		IOrderRepository order = Mockito.mock(IOrderRepository.class);
+
+		UserService userService = new UserService(userRepository, order);
+
+		Response<Boolean> response = userService.AddUser("","");
+
+		assertEquals(false, response.getData());
+	}
 }
