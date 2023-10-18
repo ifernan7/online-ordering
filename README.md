@@ -101,7 +101,11 @@ User Index Page
 The primary focus during this Milestone was to create a UI that would be able to communicate to our persistence layer via a service layer. Some of our UI functionality is supposed by additional processing that was created in our service layer.
 
 ### Clean Compile
-~ temp ~ 
+Local Build Passing
+![Local Build Passing](docs/images/milestone-3-images/local-build.png)
+
+GitHub Action Build Passing
+![GitHub Action Build Passing](docs/images/milestone-3-images/github-action-build.png)
 
 ## Enhanced User Functionality
 
