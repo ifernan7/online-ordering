@@ -15,11 +15,24 @@
     <table class="table">
         <thead>
         <tr>
-            <!--          add the correct th tags here  -->
+            <th>ID</th>
+            <th>Email</th>
+            <th>Create Date</th>
+            <th>Status</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
-        <!--          add the correct tr tags here  -->
+        <tr th:each="order : ${orders}">
+            <td th:text="${order.id}"></td>
+            <td th:text="${order.email}"></td>
+            <td th:text="${order.create_date}"></td>
+            <td th:text="${order.status}"></td>
+            <td>
+                <a th:href="@{'/order/update/' + ${order.id}}">Update</a> |
+                <a th:href="@{'/order/delete/' + ${order.id}}" th:onclick="'return confirm(\'Are you sure you want to delete this order?\');'">Delete</a>
+            </td>
+        </tr>
         </tbody>
     </table>
 </section>
