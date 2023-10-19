@@ -2,10 +2,13 @@ package com.online_ordering.order;
 
 import com.online_ordering.order.abstractions.IOrderRepository;
 import com.online_ordering.order.abstractions.IOrderService;
+import com.online_ordering.user.User;
+import com.online_ordering.user.abstractions.IUserRepository;
 import ognl.enhance.OrderedReturn;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -15,8 +18,12 @@ public class OrderService implements IOrderService {
     @Autowired
     public IOrderRepository _orderRepository;
 
-    public OrderService(IOrderRepository orderRepository) {
+    @Autowired
+    public IUserRepository _userRepository;
+
+    public OrderService(IOrderRepository orderRepository, IUserRepository userRepository) {
         this._orderRepository = orderRepository;
+        this._userRepository = userRepository;
     }
 
     public List<Order> GetAllOrders() {
@@ -41,5 +48,12 @@ public class OrderService implements IOrderService {
 
     public Order GetOrderById(int id) {
         return  _orderRepository.GetOrderById(id);
+    }
+
+    public void CreateNewOrder(String email) {
+
+        User user = _userRepository.GetUserByEmail(email);
+
+        _orderRepository.CreateNewOrder(user.getId(), new Date(), 1 );
     }
 }

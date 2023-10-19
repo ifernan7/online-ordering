@@ -4,16 +4,25 @@
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{layout.html}">
 <head>
-    <title>Orders</title>
+    <title>Create Order</title>
 </head>
 
 <body>
 <section layout:fragment="content">
     <h1>Create Order</h1>
-
     <div th:if="${viewModel.message != null}">
         <p th:text="${viewModel.message}"></p>
     </div>
+    <form action="/order/create" method="post" th:object="${viewModel.data}">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" th:value="${viewModel.data.email}" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Create Order</button>
+        </div>
+    </form>
 
 </section>
 </body>
