@@ -42,6 +42,8 @@ public class OrderController {
 
         ViewModelBase<CreateOrderDTO> viewModel = new ViewModelBase<CreateOrderDTO>(new CreateOrderDTO(), null);
 
+        _orderService.CreateNewOrder(model.getEmail());
+
         return new ModelAndView("order/create","viewModel",viewModel);
     }
 

@@ -29,6 +29,9 @@ public interface IUserRepository extends JpaRepository<User, Long> {
     @Query(value = "SELECT u.id, u.email, CASE WHEN o.id IS NULL THEN 0 ELSE 1 END AS order_existing FROM online_ordering_db.users AS u LEFT JOIN online_ordering_db.orders AS o ON u.id = o.user_id WHERE u.id = :id", nativeQuery = true)
     User GetUserById(@Param("id") int id);
 
+    @Query(value = "SELECT u.id, u.email, CASE WHEN o.id IS NULL THEN 0 ELSE 1 END AS order_existing FROM online_ordering_db.users AS u LEFT JOIN online_ordering_db.orders AS o ON u.id = o.user_id WHERE u.email = :email", nativeQuery = true)
+    User GetUserByEmail(@Param("email") String email);
+
     @Modifying
     @Transactional
     @Query(value = "DELETE FROM online_ordering_db.users WHERE id = :id", nativeQuery = true)

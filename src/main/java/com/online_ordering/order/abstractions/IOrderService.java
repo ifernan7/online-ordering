@@ -19,4 +19,6 @@ public interface IOrderService {
     void DeleteOrderById(int id);
 
     Order GetOrderById(int id);
+
+    void CreateNewOrder(String email);
 }
