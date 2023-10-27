@@ -1,0 +1,26 @@
+name: Continuous Integration Workflow
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Continuous Integration Build"]
+    types:
+      - completed
+
+jobs:
+  if: ${{ github.event.workflow_run.conclusion == 'success' }}
+  continuous_integration_test:
+    name: Continuous Integration Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: 20
+          distribution: 'temurin'
+
+      - name: Execute Unit Tests
+        run: mvn test
