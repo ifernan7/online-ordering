@@ -36,7 +36,7 @@ jobs:
 
       - name: Display JAR File Path
         run: |
-          ls ${{ github.workspace }}/target | grep *jar
+          ls ${{ github.workspace }}/target | grep jar
 
       - uses: actions/upload-artifact@v3
         with:
