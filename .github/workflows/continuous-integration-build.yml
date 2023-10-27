@@ -32,7 +32,7 @@ jobs:
 
       - name: Display JAR File Path
         run: |
-          find $GITHUB_WORKSPACE -name "*.jar" | head -n 1
+          find $GITHUB_WORKSPACE -name "*.jar" | head -n 10
 
       # - uses: actions/upload-artifact@v3
       #   with:
