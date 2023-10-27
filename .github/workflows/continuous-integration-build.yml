@@ -9,6 +9,40 @@ on:
       - main
 
 jobs:
+  continuous_integration_build:
+    name: Continuous Integration Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: 20
+          distribution: 'temurin'
+
+      - name: Build with Maven
+        run: mvn clean compile
+
+  continuous_integration_test:
+    name: Continuous Integration Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: 20
+          distribution: 'temurin'
+
+      - name: Execute Unit Tests
+        run: mvn test
+
   continuous_integration_artifact:
     name: Continuous Integration Artifact
     runs-on: ubuntu-latest
@@ -26,25 +60,7 @@ jobs:
       - name: package with Maven
         run: mvn package
 
-      - name: Run pwd
-        run: |
-          pwd
-
-      - name: Run ${{ github.workspace }}
-        run: |
-          echo ${{ github.workspace }}/target
-
-      - name: echo ${{ github.workspace }}
-        run: |
-          echo ${{ github.workspace }}/target
-
       - uses: actions/upload-artifact@v3
         with:
           name: online_ordering
           path: ${{ github.workspace }}/target/*.jar.original
-
-
-
-
-#[INFO] The original artifact has been renamed to /home/runner/work/online-ordering/online-ordering/target/online_ordering-0.0.1-SNAPSHOT.jar.original
-#/home/runner/work/online-ordering/online-ordering/target/online_ordering-0.0.1-SNAPSHOT.jar.original
