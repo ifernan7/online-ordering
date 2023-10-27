@@ -63,4 +63,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: online_ordering
-          path: target/online_ordering-0.0.1-SNAPSHOT.jar
+          path: target/*.jar
