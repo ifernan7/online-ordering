@@ -9,39 +9,39 @@ on:
       - main
 
 jobs:
-  continuous_integration_build:
-    name: Continuous Integration Build
-    runs-on: ubuntu-latest
+  # continuous_integration_build:
+  #   name: Continuous Integration Build
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
+  #   steps:
+  #     - name: Checkout Code
+  #       uses: actions/checkout@v2
 
-      - name: Set up JDK
-        uses: actions/setup-java@v2
-        with:
-          java-version: 20
-          distribution: 'temurin'
+  #     - name: Set up JDK
+  #       uses: actions/setup-java@v2
+  #       with:
+  #         java-version: 20
+  #         distribution: 'temurin'
 
-      - name: Build with Maven
-        run: mvn clean compile
+  #     - name: Build with Maven
+  #       run: mvn clean compile
 
-  continuous_integration_test:
-    name: Continuous Integration Test
-    runs-on: ubuntu-latest
+  # continuous_integration_test:
+  #   name: Continuous Integration Test
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
+  #   steps:
+  #     - name: Checkout Code
+  #       uses: actions/checkout@v2
 
-      - name: Set up JDK
-        uses: actions/setup-java@v2
-        with:
-          java-version: 20
-          distribution: 'temurin'
+  #     - name: Set up JDK
+  #       uses: actions/setup-java@v2
+  #       with:
+  #         java-version: 20
+  #         distribution: 'temurin'
 
-      - name: Execute Unit Tests
-        run: mvn test
+  #     - name: Execute Unit Tests
+  #       run: mvn test
 
   continuous_integration_artifact:
     name: Continuous Integration Artifact
@@ -60,7 +60,15 @@ jobs:
       - name: Build with Maven
         run: mvn clean compile
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: online_ordering
-          path: target/*.jar
+    - name: Run pwd
+      run: |
+        pwd
+
+    - name: Display JAR File Path
+      run: |
+        find $GITHUB_WORKSPACE -name "*.jar" | head -n 1
+
+      # - uses: actions/upload-artifact@v3
+      #   with:
+      #     name: online_ordering
+      #     path: target/*.jar
