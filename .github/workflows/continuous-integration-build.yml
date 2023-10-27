@@ -34,11 +34,20 @@ jobs:
         run: |
           echo $GITHUB_WORKSPACE/target
 
-      - name: Display JAR File Path
+      - name: echo ${{ github.workspace }}
         run: |
-          ls ${{ github.workspace }}/target | grep jar
+          echo ${{ github.workspace }}/target
 
       - uses: actions/upload-artifact@v3
         with:
           name: online_ordering
           path: $GITHUB_WORKSPACE/target/online_ordering-0.0.1-SNAPSHOT.jar
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: online_ordering
+          path: $GITHUB_WORKSPACE/target/*.jar.original
+
+
+#[INFO] The original artifact has been renamed to /home/runner/work/online-ordering/online-ordering/target/online_ordering-0.0.1-SNAPSHOT.jar.original
+#/home/runner/work/online-ordering/online-ordering/target/online_ordering-0.0.1-SNAPSHOT.jar.original
