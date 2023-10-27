@@ -38,7 +38,7 @@ jobs:
         run: |
           ls -la $GITHUB_WORKSPACE/target
 
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: online_ordering
-      #     path: target/*.jar
+      - uses: actions/upload-artifact@v3
+        with:
+          name: online_ordering
+          path: $GITHUB_WORKSPACE/target/*.jar
