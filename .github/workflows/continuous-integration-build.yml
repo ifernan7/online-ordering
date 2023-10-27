@@ -23,8 +23,8 @@ jobs:
           java-version: 20
           distribution: 'temurin'
 
-      - name: Build with Maven
-        run: mvn clean compile
+      - name: package with Maven
+        run: mvn package
 
       - name: Run pwd
         run: |
