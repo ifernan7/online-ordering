@@ -1,0 +1,32 @@
+name: Continuous Integration Artifact
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Continuous Integration Test"]
+    types:
+      - completed
+
+jobs:
+  continuous_integration_artifact:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    name: Continuous Integration Artifact
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: 20
+          distribution: 'temurin'
+
+      - name: package with Maven
+        run: mvn package
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: online_ordering
+          path: ${{ github.workspace }}/target/*.jar.original
