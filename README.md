@@ -137,3 +137,13 @@ Trying to add a product with a negative price
 | Sebastian Krawiec     | I've created a webpage showcasing all available products and integrated buttons for easy CRUD (Create, Read, Update, Delete) functionality. I've also implemented validations to those buttons to prevent any malformed data being submitted. Specifically, products cannot be removed if there are active orders associated with them. Additionally, new products cannot be added or existing ones updated if there is missing data or if the price is set to a negative value/with text.                                      |
 | Dilip Sai Reddy Mettu |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | Jay Kukadiya          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+
+## Milestone 4
+
+### Contribution Summary
+| Name                  | Contribution                                                                                          |
+|-----------------------|-------------------------------------------------------------------------------------------------------|
+| Ismael Fernandez      |                                                                                                       |
+| Sebastian Krawiec     |                                                                                                       |
+| Dilip Sai Reddy Mettu |                                                                                                       |
+| Jay Kukadiya          |                                                                                                       |
