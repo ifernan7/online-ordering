@@ -90,4 +90,3 @@ public class UserController {
         return new RedirectView("/user");
     }
 }
-Here I'm adding bad code on purpose to trigger a build failure to test the ci pipeline..
