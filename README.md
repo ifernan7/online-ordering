@@ -98,7 +98,7 @@ User Index Page
 | Jay Kukadiya          |                                                                                                                                                                                                                                                                                                                                                                          |
 
 ## Milestone 3
-The primary focus during this Milestone was to create a UI that would be able to communicate to our persistence layer via a service layer. Some of our UI functionality is supposed by additional processing that was created in our service layer.
+The primary focus during this Milestone was to create a UI that would be able to communicate to our persistence layer via a service layer. Some of our UI functionality is supported by additional processing that was created in our service layer.
 
 ### Clean Compile
 Local Build Passing
