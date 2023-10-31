@@ -140,6 +140,25 @@ Trying to add a product with a negative price
 
 ## Milestone 4
 
+### Clean Compile
+~ temp ~
+
+### Enhanced CI/CD Pipeline
+Continuous Integration Workflows Stops if Build Fails
+![Continuous Integration Workflows Stops if Build Fails](docs/images/milestone-4-images/github-jobs-stop-running-if-build-fails.png)
+
+Continuous Integration Workflows Continuous if Build Passes
+![Continuous Integration Workflows Continuous if Build Passes](docs/images/milestone-4-images/github-jobs-running-if-build-passes.png)
+
+Continuous Integration Workflows Create Build Artifact if Build & Unit Tests Pass 
+![Continuous Integration Workflows Create Build Artifact if Build & Unit Tests Pass](docs/images/milestone-4-images/build-artifact-get-created-with-new-ci-artifact-job.png)
+
+Continuous Integration Workflows Creates Deployable Jar File
+![Continuous Integration Workflows Creates Deployable Jar File](docs/images/milestone-4-images/github-job-creates-deployable-jar-file.png)
+
+### Ordering Functionality 
+~ temp ~
+
 ### Contribution Summary
 | Name                  | Contribution                                                                                          |
 |-----------------------|-------------------------------------------------------------------------------------------------------|
