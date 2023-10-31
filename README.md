@@ -156,8 +156,15 @@ Continuous Integration Workflows Create Build Artifact if Build & Unit Tests Pas
 Continuous Integration Workflows Creates Deployable Jar File
 ![Continuous Integration Workflows Creates Deployable Jar File](docs/images/milestone-4-images/github-job-creates-deployable-jar-file.png)
 
-### Ordering Functionality 
-~ temp ~
+### Ordering Functionality
+New Add to Order Menu Option
+![add-to-order-menu-option.png](docs/images/milestone-4-images/ordering/add-to-order-menu-option.png)
+
+New Bootstrap Modal to Display Products to add to Order
+![add-to-order-modal.png](docs/images/milestone-4-images/ordering/add-to-order-modal.png)
+
+Order Updated with products that were selected in the modal
+![updated-order-with-newly-added-products.png](docs/images/milestone-4-images/ordering/updated-order-with-newly-added-products.png)
 
 ### Contribution Summary
 | Name                  | Contribution                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
