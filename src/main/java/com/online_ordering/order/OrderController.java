@@ -3,6 +3,7 @@ package com.online_ordering.order;
 import com.online_ordering.order.abstractions.IOrderService;
 import com.online_ordering.order.dtos.CreateOrderDTO;
 import com.online_ordering.order.dtos.UpdateOrderDTO;
+import com.online_ordering.user.User;
 import com.online_ordering.utilities.ViewModelBase;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,7 +35,7 @@ public class OrderController {
     public ModelAndView Create() {
         ViewModelBase<CreateOrderDTO> viewModel = new ViewModelBase<CreateOrderDTO>(new CreateOrderDTO(), null);
 
-        return new ModelAndView("order/create","viewModel",viewModel);
+        return new ModelAndView("order/create", "viewModel", viewModel);
     }
 
     @PostMapping("/order/create")
@@ -44,26 +45,31 @@ public class OrderController {
 
         _orderService.CreateNewOrder(model.getEmail());
 
-        return new ModelAndView("order/create","viewModel",viewModel);
+        return new ModelAndView("order/create", "viewModel", viewModel);
     }
 
     @GetMapping("/order/update/{id}")
-    public ModelAndView Update(@PathVariable int id){
+    public ModelAndView Update(@PathVariable int id) {
 
-        Order order = _orderService.GetOrderById(id);
+        List<OrderProduct> products = _orderService.GetProductsOnOrder(id);
 
-        ViewModelBase<UpdateOrderDTO> viewModel = new ViewModelBase<UpdateOrderDTO>(new UpdateOrderDTO(), null);
+        ModelAndView modelAndView = new ModelAndView();
 
-        return new ModelAndView("order/update","viewModel",viewModel);
+        modelAndView.addObject("products", products);
+        modelAndView.addObject("orderid", id);
+
+        modelAndView.setViewName("order/update");
+
+        return modelAndView;
     }
 
-    @PostMapping("/order/update")
-    public Object Update(UpdateOrderDTO model) {
-        
-        ViewModelBase<UpdateOrderDTO> viewModel = new ViewModelBase<UpdateOrderDTO>(new UpdateOrderDTO(), null);
-
-        return new ModelAndView("order/update","viewModel",viewModel);
-    }
+//    @PostMapping("/order/update")
+//    public Object Update(UpdateOrderDTO model) {
+//
+//        ViewModelBase<UpdateOrderDTO> viewModel = new ViewModelBase<UpdateOrderDTO>(new UpdateOrderDTO(), null);
+//
+//        return new ModelAndView("order/update","viewModel",viewModel);
+//    }
 
     @GetMapping("/order/delete/{id}")
     public RedirectView Delete(@PathVariable int id) {

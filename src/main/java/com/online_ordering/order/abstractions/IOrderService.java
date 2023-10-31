@@ -1,6 +1,7 @@
 package com.online_ordering.order.abstractions;
 
 import com.online_ordering.order.Order;
+import com.online_ordering.order.OrderProduct;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -21,4 +22,9 @@ public interface IOrderService {
     Order GetOrderById(int id);
 
     void CreateNewOrder(String email);
+
+    List<OrderProduct> GetProductsOnOrder(int id);
+
+    void AddToOrder(int order_id, int product_id, int quantity);
+
 }
