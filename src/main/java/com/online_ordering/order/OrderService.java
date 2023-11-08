@@ -70,6 +70,17 @@ public class OrderService implements IOrderService {
     }
 
     public void AddToOrder(int order_id, int product_id, int quantity) {
-        _orderRepository.AddToOrder(order_id, product_id, quantity);
+        List<OrderProduct> existingOrderProducts = GetProductsOnOrder(order_id);
+        Boolean productFoundInOrder = false;
+
+        for (int i = 0; i < existingOrderProducts.size(); i++) {
+            if (existingOrderProducts.get(i).getId() == product_id) {
+                productFoundInOrder = true;
+            }
+        }
+
+        if (!productFoundInOrder) {
+            _orderRepository.AddToOrder(order_id, product_id, quantity);
+        }
     }
 }
