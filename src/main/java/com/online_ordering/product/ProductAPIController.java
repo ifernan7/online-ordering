@@ -36,7 +36,7 @@ public class ProductAPIController {
         for(int i = 0; i < products.size(); i++){
             int productID = products.get(i).getId();
             for(int j = 0; j < productsOnOrder.size(); j++){
-                if (productID == productsOnOrder.get(j).getId()){
+                if (productID == productsOnOrder.get(j).getProductId()){
                     products.remove(i);
                 }
             }
