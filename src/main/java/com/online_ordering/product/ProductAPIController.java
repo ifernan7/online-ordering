@@ -2,6 +2,7 @@ package com.online_ordering.product;
 
 
 import com.online_ordering.order.Order;
+import com.online_ordering.order.OrderProduct;
 import com.online_ordering.order.abstractions.IOrderService;
 import com.online_ordering.product.abstractions.IProductService;
 import org.springframework.http.HttpStatus;
@@ -30,6 +31,18 @@ public class ProductAPIController {
     @GetMapping("/products/{orderId}")
     public ResponseEntity<Object> GetAllProducts(@PathVariable int orderId) {
         List<Product> products = _productService.GetAllProducts();
+        List<OrderProduct> productsOnOrder = _orderService.GetProductsOnOrder(orderId);
+
+        for(int i = 0; i < products.size(); i++){
+            int productID = products.get(i).getId();
+            for(int j = 0; j < productsOnOrder.size(); j++){
+                if (productID == productsOnOrder.get(j).getId()){
+                    products.remove(i);
+                }
+            }
+        }
+
+
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
