@@ -141,7 +141,11 @@ Trying to add a product with a negative price
 ## Milestone 4
 
 ### Clean Compile
-~ temp ~
+GitHub Action Build
+![Clean GitHub Action Build](docs/images/milestone-4-images/milestone-4-build.png)
+
+Local Maven Build
+![Clean Local Build](docs/images/milestone-4-images/milestone-4-local-build.png)
 
 ### Enhanced CI/CD Pipeline
 Continuous Integration Workflows Stops if Build Fails
