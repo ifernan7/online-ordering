@@ -17,10 +17,14 @@ import java.util.List;
 @RequestMapping("/api")
 public class ProductAPIController {
 
+
     private final IProductService _productService;
 
-    public ProductAPIController(IProductService productService) {
+    private final IOrderService _orderService;
+
+    public ProductAPIController(IProductService productService, IOrderService orderService) {
         this._productService = productService;
+        this._orderService = orderService;
     }
 
     @GetMapping("/products/{orderId}")
