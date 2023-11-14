@@ -15,6 +15,6 @@ import java.util.List;
 @Repository
 public interface IOrderProductRepository extends JpaRepository<OrderProduct, Long> {
 
-    @Query(value = "select op.id ,p.name, p.description ,p.price ,op.quantity from online_ordering_db.order_products op INNER JOIN online_ordering_db.orders o ON op.order_id  = o.id INNER JOIN online_ordering_db.products p ON op.product_id = p.id WHERE op.order_id = :id", nativeQuery = true)
+    @Query(value = "select op.id ,p.name, p.description ,p.price ,op.quantity, op.product_id from online_ordering_db.order_products op INNER JOIN online_ordering_db.orders o ON op.order_id  = o.id INNER JOIN online_ordering_db.products p ON op.product_id = p.id WHERE op.order_id = :id", nativeQuery = true)
     List<OrderProduct> GetProductsOnOrder(@Param("id") int id);
 }

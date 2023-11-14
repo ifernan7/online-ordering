@@ -74,8 +74,9 @@
         }
 
         function GetProducts() {
+            var orderId = $("#id").val();
             $.ajax({
-                url: "http://localhost:8080/api/products",
+                url: "http://localhost:8080/api/products/"+orderId,
                 type: "GET",
                 dataType: "json",
                 success: function (data) {
@@ -122,6 +123,7 @@
                 data: JSON.stringify(updateOrderDTO),
                 success: function (data) {
                     window.console.log(data);
+                    location.reload()
                 },
                 error: function (error) {
                     window.console.log(error);

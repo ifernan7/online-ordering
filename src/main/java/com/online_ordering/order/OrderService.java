@@ -69,18 +69,27 @@ public class OrderService implements IOrderService {
         return  products;
     }
 
+    public void UpdateQuantityOnOrder(int order_id, int product_id, int quantity){
+        _orderRepository.UpdateQuantityOnOrder(order_id, product_id, quantity + 1);
+    }
+
     public void AddToOrder(int order_id, int product_id, int quantity) {
         List<OrderProduct> existingOrderProducts = GetProductsOnOrder(order_id);
         Boolean productFoundInOrder = false;
+        int productFoundQuantity = 0;
 
         for (int i = 0; i < existingOrderProducts.size(); i++) {
-            if (existingOrderProducts.get(i).getId() == product_id) {
+            if (existingOrderProducts.get(i).getProductId() == product_id) {
                 productFoundInOrder = true;
+                productFoundQuantity = existingOrderProducts.get(i).getQuantity();
             }
         }
 
         if (!productFoundInOrder) {
             _orderRepository.AddToOrder(order_id, product_id, quantity);
+        }
+        else if(productFoundInOrder){
+            UpdateQuantityOnOrder(order_id, product_id, productFoundQuantity);
         }
     }
 }

@@ -39,6 +39,12 @@ public interface IOrderRepository extends JpaRepository<Order, Long> {
     @Query(value = "INSERT INTO online_ordering_db.order_products(order_id, product_id, quantity) VALUE(:order_id, :product_id, :quantity);", nativeQuery = true)
     void AddToOrder(@Param("order_id") int order_id, @Param("product_id") int product_id, @Param("quantity") int quantity);
 
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE online_ordering_db.order_products SET quantity = :quantity WHERE order_id = :order_id AND product_id = :product_id", nativeQuery = true)
+    void UpdateQuantityOnOrder(@Param("order_id") int order_id, @Param("product_id") int product_id, @Param("quantity") int quantity);
+
+
     //When the passed in id has no records the method will return a null Order
     //need to make sure whatever calls this method does a null check..
     @Query(value = "SELECT o.id , u.email , o.create_date , os.status FROM online_ordering_db.orders AS o INNER JOIN online_ordering_db.order_status AS os ON o.status_id = os.id INNER JOIN online_ordering_db.users AS u ON o.user_id = u.id WHERE o.id = :id", nativeQuery = true)
