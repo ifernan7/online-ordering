@@ -31,16 +31,16 @@ public class ProductAPIController {
     @GetMapping("/products/{orderId}")
     public ResponseEntity<Object> GetAllProducts(@PathVariable int orderId) {
         List<Product> products = _productService.GetAllProducts();
-        List<OrderProduct> productsOnOrder = _orderService.GetProductsOnOrder(orderId);
+//        List<OrderProduct> productsOnOrder = _orderService.GetProductsOnOrder(orderId);
 
-        for(int i = 0; i < products.size(); i++){
-            int productID = products.get(i).getId();
-            for(int j = 0; j < productsOnOrder.size(); j++){
-                if (productID == productsOnOrder.get(j).getProductId()){
-                    products.remove(i);
-                }
-            }
-        }
+//        for(int i = 0; i < products.size(); i++){
+//            int productID = products.get(i).getId();
+//            for(int j = 0; j < productsOnOrder.size(); j++){
+//                if (productID == productsOnOrder.get(j).getProductId()){
+//                    products.remove(i);
+//                }
+//            }
+//        }
 
 
         return new ResponseEntity<>(products, HttpStatus.OK);
