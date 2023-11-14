@@ -27,4 +27,6 @@ public interface IOrderService {
 
     void AddToOrder(int order_id, int product_id, int quantity);
 
+    void UpdateQuantityOnOrder(int order_id, int product_id, int quantity);
+
 }
